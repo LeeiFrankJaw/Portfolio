@@ -1,0 +1,82 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 595 842
+%%HiResBoundingBox: 0 0 595.275591 841.889764
+%%Title: Random Stars
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/PW 595.275591 def
+/PH 841.889764 def
+/max_s 20 def
+/min_s 4 def
+/rprec 2400 def
+/draw {fill} bind def
+
+(%Calendar%) currentdevparams
+dup /Day get 24 mul
+/t exch def
+dup /Hour get t add 60 mul
+/t exch def
+dup /Minute get t add 60 mul
+/t exch def
+/Second get t add
+/t exch def
+
+t srand
+
+
+/STAR {
+	dup 0 moveto
+	1 1 4 {
+		pop
+		144 rotate
+		dup 0 lineto
+	} for
+	closepath draw
+	pop
+} def
+
+/random {
+	rand //rprec mod //rprec div
+} def
+
+/randrange {
+	dup
+	3 1 roll
+	sub random mul add
+} def
+
+/prange {
+	dup //PW exch sub			% x_min and x_max
+	1 index						% y_min
+	dup //PH exch sub			% y_max
+} def
+
+% //min_s //max_s randrange STAR
+
+% random =
+
+% .2 1 randrange =
+
+
+1 1 200 {
+	pop
+	gsave
+	//min_s //max_s randrange
+	dup prange
+	randrange
+	3 1 roll
+	randrange
+	exch translate
+	0 72 randrange rotate
+	STAR
+	grestore
+} for
+
+showpage
+%%EOF

@@ -1,0 +1,6 @@
+2014-12-08 20:48:47.045:INFO:oejs.Server:jetty-7.6.13.v20130916
+2014-12-08 20:48:47.080:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000
+2014-12-08 20:52:43.203:INFO:oejs.Server:jetty-7.6.13.v20130916
+2014-12-08 20:52:43.236:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:3000
+Started server on port 3000

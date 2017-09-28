@@ -1,0 +1,665 @@
+%!PS-Adobe-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%Orientation: Portrait
+%%DocumentMedia: a4 595.275591 841.889764 75 white ()
+%%BoundingBox: 4 4 592 838
+%%HiResBoundingBox: 4.110258 4.110258 591.165334 837.779529
+%%Title: Walkthru Peter Fischer PS Intro
+%%For: Lei Zhao
+%%Pages: 2
+%%EndComments
+%%BeginSetup
+/PW 595.275591 def
+/PH 841.889764 def
+/pt2mm 2.834646 def
+<< /PageSize [PW PH] >> setpagedevice
+%%EndSetup
+
+%%Page: Cover 1
+%%BeginPageSetup
+mark /Label (Cover)
+	/PAGELABEL pdfmark
+%%EndPageSetup
+
+gsave
+newpath
+10 10 moveto
+40 10 lineto
+20 30 lineto
+1 setlinecap
+1 setlinejoin
+stroke
+grestore
+
+% 50 10 30 30 rectstroke
+gsave
+newpath
+50 10 moveto
+80 10 lineto
+80 40 lineto
+50 40 lineto
+closepath
+0 1 0 setrgbcolor
+fill
+grestore
+
+gsave
+newpath
+90 10 moveto
+100 0 rlineto
+-50 100 60 sin mul rlineto
+closepath stroke
+/tan {dup sin exch cos div} def
+/radius 50 30 tan mul def
+1 0 0 setrgbcolor
+90 50 add 10 //radius add //radius 0 360 arc fill
+grestore
+
+gsave
+1 setlinecap
+/x 210 def
+/y 10 def
+/len 100 def
+/LINE {
+	/inc exch 10 sub def
+	newpath
+	x y len add inc sub moveto
+	inc inc len sub rlineto
+	stroke
+} def
+10 LINE 20 LINE 30 LINE 40 LINE 50 LINE 60 LINE 70 LINE 80 LINE 90 LINE 100 LINE
+110 LINE
+
+/x 10 def
+/y 130 def
+/len 420 def
+10 10 len 10 add {LINE} for
+grestore
+
+
+gsave
+/BOX {
+	{1 0 0} {0 0 1} ifelse setrgbcolor
+	0 0 10 10 rectstroke
+} def
+
+180 250 translate true BOX
+12 0 translate false BOX
+grestore
+
+gsave
+1 setlinecap
+
+/rpos {
+	2 copy
+	cos mul
+	3 1 roll
+	sin mul
+} def
+
+/posadd {
+	3 2 roll
+	add
+	3 1 roll
+	add
+	exch
+} def
+
+/POLY {
+	/n exch def
+	/r exch def
+	/y exch def
+	/x exch def
+	n 3 ge {
+		/alpha 360 n div def
+		1 1 n 1 sub {
+			/i exch def
+			0 1 i 1 sub {
+				/j exch def
+				x y r i alpha mul rpos posadd moveto
+				x y r j alpha mul rpos posadd lineto
+			} for
+		} for
+		stroke
+	} if
+} def
+
+350 300 100 18 POLY
+
+/str 10 45 rpos pop 12 string cvs def
+/Times-Roman 30 selectfont 10 75 moveto str show
+grestore
+
+gsave
+100 300 translate
+/BOX {
+	0 0 10 10 rectstroke
+} def
+
+BOX
+30 20 translate BOX
+-20 10 translate
+40 rotate
+1.9 .8 scale
+BOX
+grestore
+
+gsave
+330 60 translate
+35 35 moveto
+1 1 3 {
+	pop
+	120 rotate
+	35 35 lineto
+} for
+stroke
+
+100 0 translate
+35 35 moveto
+1 1 4 {
+	pop
+	144 rotate
+	35 35 lineto
+} for
+closepath stroke
+
+85 100 translate
+1 1 36 {
+	pop
+	0 0 moveto
+	50 0 lineto
+	10 rotate
+} for
+stroke
+grestore
+
+gsave
+pt2mm dup scale
+1.5 dup translate
+.1 setlinewidth
+newpath
+0 0 moveto
+0 294 lineto
+207 294 lineto
+207 0 lineto
+closepath stroke
+grestore
+
+save
+/showpage {} def
+
+save
+160 400 translate
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 80 70
+%%Title: Text Example
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+10 10 translate
+0 0 moveto
+/Times-Roman findfont
+15 scalefont setfont
+(Roman) show
+
+0 20 rmoveto
+/Helvetica-Bold findfont
+5 scalefont setfont
+(Helvetica) show
+
+/x 2 sqrt 10 string cvs def
+
+20 20 translate
+30 rotate
+0 0 moveto
+currentfont 2 scalefont setfont
+x show
+
+0 -2 moveto
+x stringwidth rlineto
+stroke
+
+showpage
+%%EOF
+
+restore
+
+save
+290 410 translate
+.5 dup scale
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 595 842
+%%HiResBoundingBox: 0 0 595.28 841.89
+%%Title: Truchet Pattern
+%%For: Lei Zhao
+%%EndComments
+
+(%Calendar%) currentdevparams
+dup /Day get 24 mul
+/t exch def
+dup /Hour get t add 60 mul
+/t exch def
+dup /Minute get t add 60 mul
+/t exch def
+/Second get t add
+/t exch def
+
+t srand
+
+/Courier-Bold 8 selectfont
+14.15 2.3 moveto
+t 12 string cvs show
+newpath
+
+2.834645669291339 dup scale
+
+5 4 translate
+1 setlinecap
+
+0 0 200 290 rectstroke
+
+1 setlinejoin
+.25 setlinewidth
+100 145 translate
+
+/W 10 def
+/W2 {W 2 div} bind def
+
+/DRAWUNIT {
+	gsave
+	translate rotate
+	% W2 neg W2 neg W2 0 90 arc stroke
+	% W2 W2 W2 180 270 arc stroke
+	W2 neg W2 moveto
+	W2 W2 neg lineto
+	W2 W2 lineto
+	closepath
+	gsave stroke grestore fill
+	grestore
+} def
+
+-95 W 95 {
+	/x exch def
+	-140 W 140 {
+		/y exch def
+		rand 4 mod 90 mul x y DRAWUNIT
+	} for
+} for
+
+restore
+
+save
+50 410 translate
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 60 40
+%%Title: Exercise 7
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/W 40 def
+/H 20 def
+/fsize 5 def
+
+10 10 translate
+.5 setlinewidth
+0 0 W H rectstroke
+
+/str (Exercise 7) def
+/Palatino-Roman fsize selectfont
+
+0 0 moveto
+
+str false charpath flattenpath pathbbox
+3 2 roll sub
+H exch sub 2 div
+3 1 roll
+exch sub
+W exch sub 2 div
+
+exch moveto
+str show
+
+showpage
+%%EOF
+
+restore
+
+save
+50 500 translate
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 90 81
+%%Title: Clip
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+.2 setlinewidth
+
+newpath
+0 0 moveto
+30 80 lineto
+90 50 lineto
+closepath
+clip
+
+0 2 100 {
+	50 0 moveto
+	100 lineto
+} for
+stroke
+
+showpage
+%%EOF
+
+restore
+
+save
+168 500 translate
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 10 95 80
+%%Title: Clip 2
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+.3 setlinewidth
+
+/Palatino-Roman 35 selectfont
+5 50 moveto (Some) false charpath
+10 15 moveto (Text) false charpath
+clip
+
+0 2 100 {
+	50 0 moveto
+	100 lineto
+} for
+stroke
+
+showpage
+%%EOF
+
+restore
+
+save
+10 822.5 translate
+.33 dup scale
+270 rotate
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 595 842
+%%HiResBoundingBox: 0 0 595.275591 841.889764
+%%Title: Random Stars
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/PW 595.275591 def
+/PH 841.889764 def
+/max_s 20 def
+/min_s 4 def
+/rprec 2400 def
+/draw {fill} bind def
+
+(%Calendar%) currentdevparams
+dup /Day get 24 mul
+/t exch def
+dup /Hour get t add 60 mul
+/t exch def
+dup /Minute get t add 60 mul
+/t exch def
+/Second get t add
+/t exch def
+
+t srand
+
+
+/STAR {
+	dup 0 moveto
+	1 1 4 {
+		pop
+		144 rotate
+		dup 0 lineto
+	} for
+	closepath draw
+	pop
+} def
+
+/random {
+	rand //rprec mod //rprec div
+} def
+
+/randrange {
+	dup
+	3 1 roll
+	sub random mul add
+} def
+
+/prange {
+	dup //PW exch sub			% x_min and x_max
+	1 index						% y_min
+	dup //PH exch sub			% y_max
+} def
+
+% //min_s //max_s randrange STAR
+
+% random =
+
+% .2 1 randrange =
+
+
+1 1 200 {
+	pop
+	gsave
+	//min_s //max_s randrange
+	dup prange
+	randrange
+	3 1 roll
+	randrange
+	exch translate
+	0 72 randrange rotate
+	STAR
+	grestore
+} for
+
+showpage
+%%EOF
+
+restore
+
+save
+475 300 translate
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 100 100
+%%Title: Chessboard
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+10 10 translate
+
+.5 setlinewidth
+0 0 80 80 rectstroke
+
+0 10 60 {
+	/i exch def
+	10 20 70 i sub {
+		dup 0 10 10 rectfill
+		0 exch 10 10 rectfill
+	} for
+	10 10 translate
+} for
+
+showpage
+%%EOF
+
+restore
+
+save
+432 125 translate
+.8 dup scale
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 196 146
+%%Title: Stickers
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/W 14 def
+/H 10 def
+/gap 4 def
+/Wgap W //gap add def
+/Hgap H //gap add def
+/fsize 5 def
+/Helvetica-Roman //fsize selectfont
+
+/draw {
+	gsave
+	3 1 roll
+	translate
+	1 .749 0 setrgbcolor
+	0 0 //W //H rectfill
+	0 0 moveto
+	dup dup
+	W exch stringwidth pop sub 2 div
+	exch false charpath flattenpath pathbbox
+	3 2 roll sub
+	H exch sub 2 div
+	3 1 roll
+	pop pop
+	moveto
+	0 setgray
+	show
+	grestore
+} def
+
+10 131 translate
+1 1 100 {
+	dup
+	4 string cvs
+	exch
+	dup
+	1 sub 10 mod //Wgap mul
+	exch
+	1 sub 10 idiv //Hgap mul neg
+	3 2 roll
+	draw
+} for
+
+showpage
+%%EOF
+
+restore
+
+save
+478 5 translate
+.5 dup scale
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 220 212
+%%HiResBoundingBox: 0 0 219.595369 211.000017
+%%Title: Logo
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/SetGreen {.498 .8 .161 setrgbcolor} bind def
+/SetBlue {.059 .667 .922 setrgbcolor} bind def
+/SetGray {0.635 0.663 0.682 setrgbcolor} bind def
+
+10.5 78.5 translate
+gsave
+
+0 0 122 122 rectstroke
+122 122 122 180 270 arc stroke
+
+122 0 translate
+0 0 76 76 rectstroke
+0 76 76 270 360 arc stroke
+
+30 76 translate
+0 0 46 46 rectstroke
+0 0 46 0 90 arc stroke
+
+-30 15 translate
+0 0 30 31 rectstroke
+31 0 31 90 180 arc stroke
+
+0 -15 translate
+0 0 15 15 rectstroke
+15 15 15 180 270 arc
+15 15 lineto closepath
+gsave
+SetBlue fill
+grestore stroke
+
+15 0 translate
+0 0 15 15 rectstroke
+0 15 15 270 360 arc
+0 15 lineto closepath
+gsave
+SetGreen fill
+grestore stroke
+
+grestore
+/Helvetica-Roman 49 selectfont
+-4 -45 translate
+
+gsave
+0 0 moveto
+SetBlue
+(Bio) show
+SetGreen
+(Quant) show
+grestore
+
+/Helvetica-Roman 21.2 selectfont
+2.4 -23 translate
+0 0 moveto
+SetGray
+(MODEL base of LIFE) show
+showpage
+%%EOF
+
+restore
+
+restore
+
+showpage
+%PageTrailer
+
+%%Trailer
+%%EOF

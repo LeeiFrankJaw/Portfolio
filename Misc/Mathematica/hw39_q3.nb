@@ -1,0 +1,625 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24085,        616]
+NotebookOptionsPosition[     23250,        584]
+NotebookOutlinePosition[     23594,        599]
+CellTagsIndexPosition[     23551,        596]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", "t", "]"}], ",", 
+         RowBox[{"Sin", "[", "t", "]"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"BoxRatios", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", "t", "]"}], ",", 
+         RowBox[{"Sin", "[", "t", "]"}], ",", "u"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"u", ",", "0", ",", 
+         RowBox[{"Cos", "[", "t", "]"}]}], "}"}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "50"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"Directive", "[", " ", 
+         RowBox[{"Opacity", "[", ".6", "]"}], " ", "]"}]}]}], " ", "]"}], ",", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", "m", "]"}], ",", 
+         RowBox[{"Sin", "[", "m", "]"}], ",", "u"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"u", ",", "0", ",", 
+         RowBox[{"Cos", "[", "m", "]"}]}], "}"}]}], "]"}]}], " ", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6475754146207952`*^9, 3.647575515051901*^9}, {
+  3.6475759416731195`*^9, 3.6475759475611258`*^9}, {3.647576025113247*^9, 
+  3.647576029363267*^9}, {3.647576067173125*^9, 3.6475761241724577`*^9}, {
+  3.6475762175912094`*^9, 3.6475763154727902`*^9}, {3.647576389477954*^9, 
+  3.6475764205991096`*^9}, {3.64757691613428*^9, 3.6475769231343455`*^9}, {
+  3.647577415609867*^9, 3.6475774200761633`*^9}, {3.647577457700569*^9, 
+  3.6475774582005725`*^9}, {3.647577553029566*^9, 3.647577556326472*^9}, {
+  3.6475776441877184`*^9, 3.6475777427956886`*^9}, {3.6475778307632*^9, 
+  3.647577837685156*^9}, {3.6475850244855*^9, 3.6475850254854927`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 1.5582299561805373`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`m$$], 0, 2 Pi}}, Typeset`size$$ = {
+    540., {296., 306.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$53995$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`m$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$53995$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        ParametricPlot3D[{
+          Cos[$CellContext`t], 
+          Sin[$CellContext`t], 0}, {$CellContext`t, 0, 2 Pi}, BoxRatios -> 
+         Automatic, 
+         AxesLabel -> {$CellContext`x, $CellContext`y, $CellContext`z}], 
+        ParametricPlot3D[{
+          Cos[$CellContext`t], 
+          Sin[$CellContext`t], $CellContext`u}, {$CellContext`t, 0, 2 
+          Pi}, {$CellContext`u, 0, 
+          Cos[$CellContext`t]}, Mesh -> None, PlotPoints -> 50, PlotStyle -> 
+         Directive[
+           Opacity[0.6]]], 
+        ParametricPlot3D[{
+          Cos[$CellContext`m$$], 
+          Sin[$CellContext`m$$], $CellContext`u}, {$CellContext`u, 0, 
+          Cos[$CellContext`m$$]}]], 
+      "Specifications" :> {{$CellContext`m$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {373., 380.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.6475794828428774`*^9, 3.6475850258761215`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"plots1", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Show", "[", 
+       RowBox[{
+        RowBox[{"ParametricPlot3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", "t", "]"}], ",", 
+            RowBox[{"Sin", "[", "t", "]"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+          RowBox[{"BoxRatios", "\[Rule]", "Automatic"}], ",", 
+          RowBox[{"AxesLabel", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+        RowBox[{"ParametricPlot3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", "t", "]"}], ",", 
+            RowBox[{"Sin", "[", "t", "]"}], ",", "u"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"u", ",", "0", ",", 
+            RowBox[{"Cos", "[", "t", "]"}]}], "}"}], ",", 
+          RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+          RowBox[{"PlotPoints", "\[Rule]", "50"}], ",", 
+          RowBox[{"PlotStyle", "\[Rule]", 
+           RowBox[{"Directive", "[", " ", 
+            RowBox[{"Opacity", "[", ".6", "]"}], " ", "]"}]}]}], " ", "]"}], 
+        ",", 
+        RowBox[{"ParametricPlot3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", "m", "]"}], ",", 
+            RowBox[{"Sin", "[", "m", "]"}], ",", "u"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"u", ",", "0", ",", 
+            RowBox[{"Cos", "[", "m", "]"}]}], "}"}]}], "]"}]}], " ", "]"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", "0", ",", 
+        RowBox[{"2", "\[Pi]"}], ",", "0.1"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<animation1.gif\>\"", ",", "plots1"}], "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6475796465910034`*^9, 3.6475796676070585`*^9}, {
+  3.6475797434248962`*^9, 3.6475797436860523`*^9}, {3.6475801693737116`*^9, 
+  3.647580192527892*^9}, {3.6475809979562435`*^9, 3.647580999206246*^9}, {
+  3.647581863657754*^9, 3.647581863845273*^9}, {3.647582116292128*^9, 
+  3.6475821166046305`*^9}, {3.6475853550877113`*^9, 3.6475853652535644`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Cos", "[", "t", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"Filling", "->", "Axis"}], ",", 
+       RowBox[{"FillingStyle", "\[Rule]", "Orange"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"m", ",", "u"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"u", ",", "0", ",", 
+         RowBox[{"Cos", "[", "m", "]"}]}], "}"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.647576799949479*^9, 3.6475768667466908`*^9}, {
+   3.64758027637164*^9, 3.6475802792466416`*^9}, {3.647580313056988*^9, 
+   3.6475804594874234`*^9}, {3.6475804966818223`*^9, 
+   3.6475805677112036`*^9}, {3.6475806932802043`*^9, 
+   3.6475808070872283`*^9}, {3.6475808893821964`*^9, 3.6475809270830526`*^9}, 
+   3.6475816780352783`*^9, {3.647585004063422*^9, 3.6475850093603477`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`m$$], 0, 2 Pi}}, Typeset`size$$ = {540., {83., 93.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`m$53733$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`m$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$53733$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[
+         Cos[$CellContext`t], {$CellContext`t, 0, 2 Pi}, AspectRatio -> 
+         Automatic, Filling -> Axis, FillingStyle -> Orange], 
+        ParametricPlot[{$CellContext`m$$, $CellContext`u}, {$CellContext`u, 0, 
+          Cos[$CellContext`m$$]}]], 
+      "Specifications" :> {{$CellContext`m$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {160., 167.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.647580892069729*^9, 3.647580928520542*^9}, 
+   3.647581687726537*^9, 3.6475850098916035`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"plots2", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Show", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{"Cos", "[", "t", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+          RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+          RowBox[{"Filling", "->", "Axis"}], ",", 
+          RowBox[{"FillingStyle", "\[Rule]", "Orange"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ParametricPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"m", ",", "u"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"u", ",", "0", ",", 
+            RowBox[{"Cos", "[", "m", "]"}]}], "}"}]}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", "0", ",", 
+        RowBox[{"2", "\[Pi]"}], ",", "0.1"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<animation2.gif\>\"", ",", "plots2"}], "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6475805902584343`*^9, 3.6475806864676256`*^9}, {
+   3.6475809646594057`*^9, 3.647581071275895*^9}, 3.6475811304599967`*^9, 
+   3.647581170553418*^9, {3.6475817341796603`*^9, 3.6475817769454527`*^9}, {
+   3.6475852889675922`*^9, 3.647585292092622*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", "t", "]"}], ",", 
+         RowBox[{"Sin", "[", "t", "]"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"BoxRatios", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", "t", "]"}], ",", 
+         RowBox[{"Sin", "[", "t", "]"}], ",", "u"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"u", ",", "0", ",", 
+         RowBox[{
+          RowBox[{"Cos", "[", "t", "]"}], "^", "2"}]}], "}"}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "50"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"Directive", "[", " ", 
+         RowBox[{"Opacity", "[", ".6", "]"}], " ", "]"}]}]}], " ", "]"}], ",", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", "m", "]"}], ",", 
+         RowBox[{"Sin", "[", "m", "]"}], ",", "u"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"u", ",", "0", ",", 
+         RowBox[{
+          RowBox[{"Cos", "[", "m", "]"}], "^", "2"}]}], "}"}]}], "]"}]}], " ",
+     "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.647581889309063*^9, 3.647581889637207*^9}, {
+  3.6475819396617546`*^9, 3.6475819399742565`*^9}, {3.6475850711835165`*^9, 
+  3.647585072121041*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`m$$], 0, 2 Pi}}, Typeset`size$$ = {
+    540., {296., 306.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`m$91024$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`m$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$91024$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        ParametricPlot3D[{
+          Cos[$CellContext`t], 
+          Sin[$CellContext`t], 0}, {$CellContext`t, 0, 2 Pi}, BoxRatios -> 
+         Automatic, 
+         AxesLabel -> {$CellContext`x, $CellContext`y, $CellContext`z}], 
+        ParametricPlot3D[{
+          Cos[$CellContext`t], 
+          Sin[$CellContext`t], $CellContext`u}, {$CellContext`t, 0, 2 
+          Pi}, {$CellContext`u, 0, Cos[$CellContext`t]^2}, Mesh -> None, 
+         PlotPoints -> 50, PlotStyle -> Directive[
+           Opacity[0.6]]], 
+        ParametricPlot3D[{
+          Cos[$CellContext`m$$], 
+          Sin[$CellContext`m$$], $CellContext`u}, {$CellContext`u, 0, 
+          Cos[$CellContext`m$$]^2}]], 
+      "Specifications" :> {{$CellContext`m$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {373., 380.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.6475852392830305`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"plots3", "=", 
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Show", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ParametricPlot3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", "t", "]"}], ",", 
+            RowBox[{"Sin", "[", "t", "]"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+          RowBox[{"BoxRatios", "\[Rule]", "Automatic"}], ",", 
+          RowBox[{"AxesLabel", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+        RowBox[{"ParametricPlot3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", "t", "]"}], ",", 
+            RowBox[{"Sin", "[", "t", "]"}], ",", "u"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"u", ",", "0", ",", 
+            RowBox[{
+             RowBox[{"Cos", "[", "t", "]"}], "^", "2"}]}], "}"}], ",", 
+          RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+          RowBox[{"PlotPoints", "\[Rule]", "50"}], ",", 
+          RowBox[{"PlotStyle", "\[Rule]", 
+           RowBox[{"Directive", "[", " ", 
+            RowBox[{"Opacity", "[", ".6", "]"}], " ", "]"}]}]}], " ", "]"}], 
+        ",", 
+        RowBox[{"ParametricPlot3D", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Cos", "[", "m", "]"}], ",", 
+            RowBox[{"Sin", "[", "m", "]"}], ",", "u"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"u", ",", "0", ",", 
+            RowBox[{
+             RowBox[{"Cos", "[", "m", "]"}], "^", "2"}]}], "}"}]}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", "0", ",", 
+        RowBox[{"2", "\[Pi]"}], ",", "0.1"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<animation3.gif\>\"", ",", "plots3"}], "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6475819913993483`*^9, 3.6475820993036976`*^9}, 
+   3.6475853743630238`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Cos", "[", "t", "]"}], "^", "2"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"Filling", "->", "Axis"}], ",", 
+       RowBox[{"FillingStyle", "\[Rule]", "Orange"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"m", ",", "u"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"u", ",", "0", ",", 
+         RowBox[{
+          RowBox[{"Cos", "[", "m", "]"}], "^", "2"}]}], "}"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6475821718495708`*^9, 3.647582172177683*^9}, {
+   3.647584516767105*^9, 3.647584519771772*^9}, {3.647584908440318*^9, 
+   3.647584925486545*^9}, 3.647585399413788*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`m$$], 0, 2 Pi}}, Typeset`size$$ = {540., {51., 61.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`m$101534$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`m$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$101534$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[
+        Cos[$CellContext`t]^2, {$CellContext`t, 0, 2 Pi}, AspectRatio -> 
+         Automatic, Filling -> Axis, FillingStyle -> Orange], 
+        ParametricPlot[{$CellContext`m$$, $CellContext`u}, {$CellContext`u, 0,
+           Cos[$CellContext`m$$]^2}]], 
+      "Specifications" :> {{$CellContext`m$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {128., 135.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.647584900956869*^9, 3.6475849260178013`*^9}, 
+   3.6475854024116125`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"plots4", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Show", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Cos", "[", "t", "]"}], "^", "2"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", 
+            RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+          RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+          RowBox[{"Filling", "->", "Axis"}], ",", 
+          RowBox[{"FillingStyle", "\[Rule]", "Orange"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ParametricPlot", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"m", ",", "u"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"u", ",", "0", ",", 
+            RowBox[{
+             RowBox[{"Cos", "[", "m", "]"}], "^", "2"}]}], "}"}]}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", "0", ",", 
+        RowBox[{"2", "\[Pi]"}], ",", "0.1"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<animation4.gif\>\"", ",", "plots4"}], "]"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6475821718495708`*^9, 3.647582172177683*^9}, {
+   3.647584516767105*^9, 3.647584519771772*^9}, {3.647584908440318*^9, 
+   3.647584925486545*^9}, 3.647585399413788*^9, {3.647585450006344*^9, 
+   3.6475854967273426`*^9}, {3.647585535357307*^9, 3.647585536716679*^9}}]
+},
+WindowSize->{949, 736},
+WindowMargins->{{Automatic, 300}, {Automatic, 46}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2393, 55, 206, "Input"],
+Cell[2976, 79, 2203, 47, 777, "Output"]
+}, Open  ]],
+Cell[5194, 129, 2454, 60, 206, "Input"],
+Cell[CellGroupData[{
+Cell[7673, 193, 1306, 31, 152, "Input"],
+Cell[8982, 226, 1808, 37, 351, "Output"]
+}, Open  ]],
+Cell[10805, 266, 1448, 36, 179, "Input"],
+Cell[CellGroupData[{
+Cell[12278, 306, 1967, 52, 206, "Input"],
+Cell[14248, 360, 2155, 46, 777, "Output"]
+}, Open  ]],
+Cell[16418, 409, 2313, 59, 260, "Input"],
+Cell[CellGroupData[{
+Cell[18756, 472, 1151, 30, 152, "Input"],
+Cell[19910, 504, 1793, 37, 287, "Output"]
+}, Open  ]],
+Cell[21718, 544, 1528, 38, 179, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

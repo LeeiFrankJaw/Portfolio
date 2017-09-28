@@ -1,0 +1,1 @@
+digits = 0 6 1 2 0 4 1 3 0 0, white space = 512, other = 1557

@@ -1,0 +1,31 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1
+javac Ex7_1.java && appletviewer.exe Ex7_1
+I/O exception while reading: c:\Users\FrankZ\Desktop\Links\4747\Chapter 7\Ex7_1\Ex7_1 (The system cannot find the file specified)
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ javac Ex7_1.java && appletviewer.exe Ex7_1.html
+javac Ex7_1.java && appletviewer.exe Ex7_1.html
+
+FrankZ@FrankZ-PC c:$ 
+Process shell finished
+

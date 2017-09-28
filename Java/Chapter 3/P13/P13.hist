@@ -1,0 +1,9 @@
+// DrJava saved history v2
+Complex a = new Complex(5, 2)//End of Interaction//
+a.getRe()//End of Interaction//
+a.getIm()//End of Interaction//
+a.add(5).display()//End of Interaction//
+Complex b = new Complex(3,10)//End of Interaction//
+b.getRe()//End of Interaction//
+b.getIm()//End of Interaction//
+a.add(b).display()//End of Interaction//

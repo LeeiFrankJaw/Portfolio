@@ -1,0 +1,123 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+Ex6_7.java:12: error: MyFrame is not abstract and does not override abstract method actionPerformed(ActionEvent) in ActionListener
+class MyFrame extends JFrame implements ActionListener, AdjustmentListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+  C-c C-c
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+Ex6_7.java:50: error: cannot find symbol
+	    jtf.setText("The selected value is " + myBar.getValue());
+	                                           ^
+  symbol:   variable myBar
+  location: class MyFrame
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+Button was clicked
+Button was clicked
+Button was clicked
+Button was clicked
+Button was clicked
+Button was clicked
+Button was clicked
+Button was clicked
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ 
+Process shell finished
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+Ex6_7.java:61: error: ';' expected
+    public Dimension getPreferredSize {
+                                     ^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ javac Ex6_7.java && java Ex6_7
+javac Ex6_7.java && java Ex6_7
+
+FrankZ@FrankZ-PC c:$ 
+Process shell finished
+

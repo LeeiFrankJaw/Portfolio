@@ -1,0 +1,40 @@
+from graph import *
+
+try:
+    nh = Node('h')
+    nj = Node('j')
+    nk = Node('k')
+    nm = Node('m')
+    ng = Node('g')
+    g = WeightedDigraph()
+    g.addNode(nh)
+    g.addNode(nj)
+    g.addNode(nk)
+    g.addNode(nm)
+    g.addNode(ng)
+    randomEdge = WeightedEdge(nh, nj, 35, 14)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nj, nk, 39, 7)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nk, nh, 88, 25)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nh, nk, 15, 13)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nk, nh, 94, 62)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nk, nh, 71, 39)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nk, nj, 61, 29)
+    g.addEdge(randomEdge)
+    randomEdge = WeightedEdge(nh, nj, 37, 34)
+    g.addEdge(randomEdge)
+    print g.childrenOf(nh)
+    print g.childrenOf(nj)
+    print g.childrenOf(nk)
+    print g.childrenOf(nm)
+    print g.childrenOf(ng)
+    print g
+except:
+    print "Error found"
+finally:
+    raw_input("Press any key to exit.")

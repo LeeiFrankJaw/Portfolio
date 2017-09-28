@@ -1,0 +1,28 @@
+%!PS
+
+/m {newpath moveto} bind def
+/l {lineto} bind def
+/cp {closepath} bind def
+/s {stroke} bind def
+/f {fill} bind def
+/sg {setgray} bind def
+/slw {setlinewidth} bind def
+/gs {gsave} bind def
+/gr {grestore} bind def
+
+matrix currentmatrix /originmat exch def
+/umatrix {originmat matrix concatmatrix setmatrix} def
+[28.3465 0 0 28.3465 10.5 100.0] umatrix
+
+.05 slw 0 sg
+2 2 m 3 3 l 3 4 l 2 4 l cp s
+5 3 m 6 4 l s
+7 2 m 8 4 l s
+4 8 3 0 360 arc cp gs .7 sg f gr s
+4 7 2 0 120 arc s
+5.012 8.753 2 180 300 arc s
+
+15 5 3 0 360 arc cp
+15 5 2 360 0 arcn cp gs s gr .7 sg f
+
+showpage

@@ -1,0 +1,1167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     42922,       1158]
+NotebookOptionsPosition[     42105,       1129]
+NotebookOutlinePosition[     42449,       1144]
+CellTagsIndexPosition[     42406,       1141]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ContourPlot3D", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"], "+", 
+         SuperscriptBox["z", "2"]}], "\[Equal]", 
+        SuperscriptBox["a", "2"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"]}], "\[Equal]", 
+        RowBox[{
+         SuperscriptBox["k", "2"], 
+         SuperscriptBox["z", "2"]}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["k", "2"], 
+              SuperscriptBox["a", "2"]}], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           SuperscriptBox["a", "2"], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SqrtBox[
+            FractionBox[
+             SuperscriptBox["a", "2"], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["k", "2"], 
+              SuperscriptBox["a", "2"]}], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["k", "2"], 
+         SqrtBox[
+          FractionBox[
+           SuperscriptBox["a", "2"], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SqrtBox[
+            FractionBox[
+             SuperscriptBox["a", "2"], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ContourStyle", "\[Rule]", 
+      RowBox[{"Opacity", "[", ".6", "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Mesh", "\[Rule]", "None"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0.5", ",", "3"}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{"a", "=", "5"}], ")"}]}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdyztIQgEARmETcogyoUWyJ1lkpUaZVkIgXCpEEsQeaIGK1aAgSkMkZfSw
+yZBcikKiIQsKdCgTgqjA0sAhXNJqqKDoqmFwlzDK3+HwTafeYFFN0mk0WlU+
+qN6Vtqa7SZl1hCOEJvaEGkajoVHoZ+1o4Q3DYYMiTnYWfsQP5+B4nTcJKaLp
+CerXmCm4Pq+jYJrZw8/krVlu7ISffyX9kOcXF7y+kJug4MVohqcnSSdsnom5
+oLO0+gEqz8sScFMjf4U+G/le+Mi2LBQLE/SvvFn3vRROhVQDsMvNVcAKqnoM
+LrW4dNAbbNdD4q12GrK3WRYoIX42oOf7t6DoqmPQ3EvKwtYPJewrPlLDHXv5
+MBRQDg2MGAgjLHJwLXAoU2aFKe3ZCjx0SVZhR0POCxmK8B70xB/34bMx54N2
+3tAxZAUqA3BRyg/C2FbjJWQvHNxCoekuAv8BvJTkGQ==
+  "]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 0.5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`k$$], 0.5, 3}}, Typeset`size$$ = {540., {301., 311.}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`k$6687$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`k$$ = 0.5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$6687$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ContourPlot3D[{$CellContext`x^2 + $CellContext`y^2 + $CellContext`z^2 == \
+$CellContext`a^2, $CellContext`x^2 + $CellContext`y^2 == $CellContext`k$$^2 \
+$CellContext`z^2, ($CellContext`k$$^2 ($CellContext`a^2/(
+             1 + $CellContext`k$$^2)))^
+           Rational[
+            1, 2] ($CellContext`x - ($CellContext`k$$^2 ($CellContext`a^2/(
+             1 + $CellContext`k$$^2)))^
+           Rational[1, 2]) + ($CellContext`a^2/(1 + $CellContext`k$$^2))^
+           Rational[1, 2] ($CellContext`z - ($CellContext`a^2/(
+            1 + $CellContext`k$$^2))^
+           Rational[
+            1, 2]), ($CellContext`k$$^2 ($CellContext`a^2/(
+             1 + $CellContext`k$$^2)))^
+           Rational[
+            1, 2] ($CellContext`x - ($CellContext`k$$^2 ($CellContext`a^2/(
+             1 + $CellContext`k$$^2)))^
+           Rational[1, 2]) - ($CellContext`k$$^2 ($CellContext`a^2/(
+            1 + $CellContext`k$$^2))^
+           Rational[1, 2]) ($CellContext`z - ($CellContext`a^2/(
+           1 + $CellContext`k$$^2))^
+          Rational[
+           1, 2])}, {$CellContext`x, -$CellContext`a, $CellContext`a}, \
+{$CellContext`y, -$CellContext`a, $CellContext`a}, {$CellContext`z, \
+-$CellContext`a, $CellContext`a}, ContourStyle -> Opacity[0.6], Mesh -> None, 
+        AxesLabel -> {$CellContext`x, $CellContext`y, $CellContext`z}], 
+      "Specifications" :> {{$CellContext`k$$, 0.5, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {378., 385.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>($CellContext`a = 5; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6545099617327347`*^9, {3.6545100221415467`*^9, 3.654510048469184*^9}, 
+   3.654510089499254*^9, {3.6545101659111857`*^9, 3.654510180972842*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"plots", "=", "\[IndentingNewLine]", 
+     RowBox[{"Table", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"ContourPlot3D", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["x", "2"], "+", 
+             SuperscriptBox["y", "2"], "+", 
+             SuperscriptBox["z", "2"]}], "\[Equal]", 
+            SuperscriptBox["a", "2"]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["x", "2"], "+", 
+             SuperscriptBox["y", "2"]}], "\[Equal]", 
+            RowBox[{
+             SuperscriptBox["k", "2"], 
+             SuperscriptBox["z", "2"]}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["k", "2"], 
+                SuperscriptBox["a", "2"]}], 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}]]], 
+             RowBox[{"(", 
+              RowBox[{"x", "-", 
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}]]]}], ")"}]}], "+", 
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               SuperscriptBox["a", "2"], 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}]]], 
+             RowBox[{"(", 
+              RowBox[{"z", "-", 
+               SqrtBox[
+                FractionBox[
+                 SuperscriptBox["a", "2"], 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}]]]}], ")"}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["k", "2"], 
+                SuperscriptBox["a", "2"]}], 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}]]], 
+             RowBox[{"(", 
+              RowBox[{"x", "-", 
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}]]]}], ")"}]}], "-", 
+            RowBox[{
+             SuperscriptBox["k", "2"], 
+             SqrtBox[
+              FractionBox[
+               SuperscriptBox["a", "2"], 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}]]], 
+             RowBox[{"(", 
+              RowBox[{"z", "-", 
+               SqrtBox[
+                FractionBox[
+                 SuperscriptBox["a", "2"], 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}]]]}], ")"}]}]}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", 
+           RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"ContourStyle", "\[Rule]", 
+          RowBox[{"Opacity", "[", ".6", "]"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Mesh", "\[Rule]", "None"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"AxesLabel", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0.5", ",", "3", ",", "0.1"}], "}"}]}], "]"}]}], 
+    ";"}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Export", "[", 
+     RowBox[{"\"\<perpendicular1.gif\>\"", ",", "plots"}], "]"}], ";"}], 
+   "*)"}]}]], "Input",
+ CellGroupingRules->{$CellContext`GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.6537295766193237`*^9, 3.65372963728606*^9}, {
+   3.6537297857273264`*^9, 3.653729786007383*^9}, 3.6537299989076405`*^9, 
+   3.6537326199715085`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ContourPlot3D", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"], "+", 
+         SuperscriptBox["z", "2"]}], "\[Equal]", 
+        SuperscriptBox["a", "2"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"]}], "\[Equal]", 
+        RowBox[{
+         SuperscriptBox["k", "2"], 
+         SuperscriptBox["z", "2"]}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"2", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}], ")"}]}]]], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["k", "2"], 
+              SuperscriptBox["a", "2"]}], 
+             RowBox[{"2", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"2", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}], ")"}]}]]], 
+         RowBox[{"(", 
+          RowBox[{"y", "-", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["k", "2"], 
+              SuperscriptBox["a", "2"]}], 
+             RowBox[{"2", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           SuperscriptBox["a", "2"], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SqrtBox[
+            FractionBox[
+             SuperscriptBox["a", "2"], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"2", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}], ")"}]}]]], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["k", "2"], 
+              SuperscriptBox["a", "2"]}], 
+             RowBox[{"2", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"2", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}], ")"}]}]]], 
+         RowBox[{"(", 
+          RowBox[{"y", "-", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["k", "2"], 
+              SuperscriptBox["a", "2"]}], 
+             RowBox[{"2", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["k", "2"], 
+         SqrtBox[
+          FractionBox[
+           SuperscriptBox["a", "2"], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SqrtBox[
+            FractionBox[
+             SuperscriptBox["a", "2"], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ContourStyle", "\[Rule]", 
+      RowBox[{"Opacity", "[", ".6", "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Mesh", "\[Rule]", "None"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0.5", ",", "3"}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{"a", "=", "5"}], ")"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6537292917165103`*^9, 3.653729328413659*^9}, 
+   3.6537293684935865`*^9, {3.653729401744996*^9, 3.6537294018400145`*^9}, {
+   3.654509357906369*^9, 3.6545093582346287`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 0.5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`k$$], 0.5, 3}}, Typeset`size$$ = {540., {301., 311.}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`k$620$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`k$$ = 0.5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$620$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ContourPlot3D[{$CellContext`x^2 + $CellContext`y^2 + $CellContext`z^2 == \
+$CellContext`a^2, $CellContext`x^2 + $CellContext`y^2 == $CellContext`k$$^2 \
+$CellContext`z^2, ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[
+            1, 2] ($CellContext`x - ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[
+            1, 2]) + ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[
+            1, 2] ($CellContext`y - ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[1, 2]) + ($CellContext`a^2/(1 + $CellContext`k$$^2))^
+           Rational[1, 2] ($CellContext`z - ($CellContext`a^2/(
+            1 + $CellContext`k$$^2))^
+           Rational[
+            1, 2]), ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[
+            1, 2] ($CellContext`x - ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[
+            1, 2]) + ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[
+            1, 2] ($CellContext`y - ($CellContext`k$$^2 ($CellContext`a^2/(
+             2 (1 + $CellContext`k$$^2))))^
+           Rational[1, 2]) - ($CellContext`k$$^2 ($CellContext`a^2/(
+            1 + $CellContext`k$$^2))^
+           Rational[1, 2]) ($CellContext`z - ($CellContext`a^2/(
+           1 + $CellContext`k$$^2))^
+          Rational[
+           1, 2])}, {$CellContext`x, -$CellContext`a, $CellContext`a}, \
+{$CellContext`y, -$CellContext`a, $CellContext`a}, {$CellContext`z, \
+-$CellContext`a, $CellContext`a}, ContourStyle -> Opacity[0.6], Mesh -> None, 
+        AxesLabel -> {$CellContext`x, $CellContext`y, $CellContext`z}], 
+      "Specifications" :> {{$CellContext`k$$, 0.5, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {378., 385.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.6537292746982145`*^9, 3.653729370743988*^9, 
+  3.6537294024701366`*^9, 3.6537295224361696`*^9, 3.653729797954697*^9, 
+  3.653730319877217*^9, 3.6537306307144165`*^9, 3.6537319527468257`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"plots", "=", "\[IndentingNewLine]", 
+     RowBox[{"Table", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"ContourPlot3D", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["x", "2"], "+", 
+             SuperscriptBox["y", "2"], "+", 
+             SuperscriptBox["z", "2"]}], "\[Equal]", 
+            SuperscriptBox["a", "2"]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["x", "2"], "+", 
+             SuperscriptBox["y", "2"]}], "\[Equal]", 
+            RowBox[{
+             SuperscriptBox["k", "2"], 
+             SuperscriptBox["z", "2"]}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["k", "2"], 
+                SuperscriptBox["a", "2"]}], 
+               RowBox[{"2", 
+                RowBox[{"(", 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}], ")"}]}]]], 
+             RowBox[{"(", 
+              RowBox[{"x", "-", 
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "+", 
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["k", "2"], 
+                SuperscriptBox["a", "2"]}], 
+               RowBox[{"2", 
+                RowBox[{"(", 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}], ")"}]}]]], 
+             RowBox[{"(", 
+              RowBox[{"y", "-", 
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "+", 
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               SuperscriptBox["a", "2"], 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}]]], 
+             RowBox[{"(", 
+              RowBox[{"z", "-", 
+               SqrtBox[
+                FractionBox[
+                 SuperscriptBox["a", "2"], 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}]]]}], ")"}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["k", "2"], 
+                SuperscriptBox["a", "2"]}], 
+               RowBox[{"2", 
+                RowBox[{"(", 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}], ")"}]}]]], 
+             RowBox[{"(", 
+              RowBox[{"x", "-", 
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "+", 
+            RowBox[{
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                SuperscriptBox["k", "2"], 
+                SuperscriptBox["a", "2"]}], 
+               RowBox[{"2", 
+                RowBox[{"(", 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}], ")"}]}]]], 
+             RowBox[{"(", 
+              RowBox[{"y", "-", 
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]]}], ")"}]}], "-", 
+            RowBox[{
+             SuperscriptBox["k", "2"], 
+             SqrtBox[
+              FractionBox[
+               SuperscriptBox["a", "2"], 
+               RowBox[{"1", "+", 
+                SuperscriptBox["k", "2"]}]]], 
+             RowBox[{"(", 
+              RowBox[{"z", "-", 
+               SqrtBox[
+                FractionBox[
+                 SuperscriptBox["a", "2"], 
+                 RowBox[{"1", "+", 
+                  SuperscriptBox["k", "2"]}]]]}], ")"}]}]}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", 
+           RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"ContourStyle", "\[Rule]", 
+          RowBox[{"Opacity", "[", ".6", "]"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Mesh", "\[Rule]", "None"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"AxesLabel", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0.5", ",", "3", ",", "0.1"}], "}"}]}], "]"}]}], 
+    ";"}], "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Export", "[", 
+     RowBox[{"\"\<perpendicular2.gif\>\"", ",", "plots"}], "]"}], ";"}], 
+   "*)"}]}]], "Input",
+ CellGroupingRules->{$CellContext`GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.653729934356389*^9, 3.6537299474846525`*^9}, 
+   3.6537300397555103`*^9, 3.653732604486935*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ContourPlot3D", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"], "+", 
+         SuperscriptBox["z", "2"]}], "\[Equal]", 
+        SuperscriptBox["a", "2"]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         SuperscriptBox["y", "2"]}], "\[Equal]", 
+        RowBox[{
+         SuperscriptBox["k", "2"], 
+         SuperscriptBox["z", "2"]}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"Cos", "[", "t", "]"}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"2", 
+               RowBox[{"(", 
+                RowBox[{"1", "+", 
+                 SuperscriptBox["k", "2"]}], ")"}]}]]], 
+            RowBox[{"Cos", "[", "t", "]"}]}]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"Sin", "[", "t", "]"}], 
+         RowBox[{"(", 
+          RowBox[{"y", "-", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"2", 
+               RowBox[{"(", 
+                RowBox[{"1", "+", 
+                 SuperscriptBox["k", "2"]}], ")"}]}]]], 
+            RowBox[{"Sin", "[", "t", "]"}]}]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           SuperscriptBox["a", "2"], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SqrtBox[
+            FractionBox[
+             SuperscriptBox["a", "2"], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"Cos", "[", "t", "]"}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"2", 
+               RowBox[{"(", 
+                RowBox[{"1", "+", 
+                 SuperscriptBox["k", "2"]}], ")"}]}]]], 
+            RowBox[{"Cos", "[", "t", "]"}]}]}], ")"}]}], "+", 
+        RowBox[{
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["a", "2"]}], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"Sin", "[", "t", "]"}], 
+         RowBox[{"(", 
+          RowBox[{"y", "-", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"2", 
+               RowBox[{"(", 
+                RowBox[{"1", "+", 
+                 SuperscriptBox["k", "2"]}], ")"}]}]]], 
+            RowBox[{"Sin", "[", "t", "]"}]}]}], ")"}]}], "-", 
+        RowBox[{
+         SuperscriptBox["k", "2"], 
+         SqrtBox[
+          FractionBox[
+           SuperscriptBox["a", "2"], 
+           RowBox[{"1", "+", 
+            SuperscriptBox["k", "2"]}]]], 
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SqrtBox[
+            FractionBox[
+             SuperscriptBox["a", "2"], 
+             RowBox[{"1", "+", 
+              SuperscriptBox["k", "2"]}]]]}], ")"}]}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ContourStyle", "\[Rule]", 
+      RowBox[{"Opacity", "[", ".6", "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Mesh", "\[Rule]", "None"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "=", "5"}], ";", 
+      RowBox[{"k", "=", "1"}]}], ")"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6537319845752954`*^9, 3.6537320098361616`*^9}, {
+   3.653732057289914*^9, 3.65373208704016*^9}, 3.6537321198639092`*^9, {
+   3.654509382075939*^9, 3.654509390840147*^9}, {3.654509659051135*^9, 
+   3.654509676413435*^9}, {3.6545097227062335`*^9, 3.6545097349659357`*^9}, {
+   3.6545097704371014`*^9, 3.6545097804862213`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 2 Pi}}, Typeset`size$$ = {
+    540., {301., 311.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`t$1145$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1145$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ContourPlot3D[{$CellContext`x^2 + $CellContext`y^2 + $CellContext`z^2 == \
+$CellContext`a^2, $CellContext`x^2 + $CellContext`y^2 == $CellContext`k^2 \
+$CellContext`z^2, (($CellContext`k^2 ($CellContext`a^2/(
+              1 + $CellContext`k^2)))^Rational[1, 2] 
+           Cos[$CellContext`t$$]) ($CellContext`x - ($CellContext`k^2 \
+($CellContext`a^2/(2 (1 + $CellContext`k^2))))^Rational[1, 2] 
+           Cos[$CellContext`t$$]) + (($CellContext`k^2 ($CellContext`a^2/(
+              1 + $CellContext`k^2)))^Rational[1, 2] 
+           Sin[$CellContext`t$$]) ($CellContext`y - ($CellContext`k^2 \
+($CellContext`a^2/(2 (1 + $CellContext`k^2))))^Rational[1, 2] 
+           Sin[$CellContext`t$$]) + ($CellContext`a^2/(1 + $CellContext`k^2))^
+           Rational[1, 2] ($CellContext`z - ($CellContext`a^2/(
+            1 + $CellContext`k^2))^
+           Rational[
+            1, 2]), (($CellContext`k^2 ($CellContext`a^2/(
+              1 + $CellContext`k^2)))^Rational[1, 2] 
+           Cos[$CellContext`t$$]) ($CellContext`x - ($CellContext`k^2 \
+($CellContext`a^2/(2 (1 + $CellContext`k^2))))^Rational[1, 2] 
+           Cos[$CellContext`t$$]) + (($CellContext`k^2 ($CellContext`a^2/(
+              1 + $CellContext`k^2)))^Rational[1, 2] 
+           Sin[$CellContext`t$$]) ($CellContext`y - ($CellContext`k^2 \
+($CellContext`a^2/(2 (1 + $CellContext`k^2))))^Rational[1, 2] 
+           Sin[$CellContext`t$$]) - ($CellContext`k^2 ($CellContext`a^2/(
+            1 + $CellContext`k^2))^
+           Rational[1, 2]) ($CellContext`z - ($CellContext`a^2/(
+           1 + $CellContext`k^2))^
+          Rational[
+           1, 2])}, {$CellContext`x, -$CellContext`a, $CellContext`a}, \
+{$CellContext`y, -$CellContext`a, $CellContext`a}, {$CellContext`z, \
+-$CellContext`a, $CellContext`a}, ContourStyle -> Opacity[0.6], Mesh -> None, 
+        AxesLabel -> {$CellContext`x, $CellContext`y, $CellContext`z}], 
+      "Specifications" :> {{$CellContext`t$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{610., {378., 385.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`a = 5; $CellContext`k = 1); 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6537321243795757`*^9, {3.6545096432179174`*^9, 3.6545096991005087`*^9}, {
+   3.6545097825136747`*^9, 3.654509796450532*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"plots", "=", "\[IndentingNewLine]", 
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ContourPlot3D", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["x", "2"], "+", 
+            SuperscriptBox["y", "2"], "+", 
+            SuperscriptBox["z", "2"]}], "\[Equal]", 
+           SuperscriptBox["a", "2"]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["x", "2"], "+", 
+            SuperscriptBox["y", "2"]}], "\[Equal]", 
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SuperscriptBox["z", "2"]}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"1", "+", 
+               SuperscriptBox["k", "2"]}]]], 
+            RowBox[{"Cos", "[", "t", "]"}], 
+            RowBox[{"(", 
+             RowBox[{"x", "-", 
+              RowBox[{
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]], 
+               RowBox[{"Cos", "[", "t", "]"}]}]}], ")"}]}], "+", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"1", "+", 
+               SuperscriptBox["k", "2"]}]]], 
+            RowBox[{"Sin", "[", "t", "]"}], 
+            RowBox[{"(", 
+             RowBox[{"y", "-", 
+              RowBox[{
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]], 
+               RowBox[{"Sin", "[", "t", "]"}]}]}], ")"}]}], "+", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              SuperscriptBox["a", "2"], 
+              RowBox[{"1", "+", 
+               SuperscriptBox["k", "2"]}]]], 
+            RowBox[{"(", 
+             RowBox[{"z", "-", 
+              SqrtBox[
+               FractionBox[
+                SuperscriptBox["a", "2"], 
+                RowBox[{"1", "+", 
+                 SuperscriptBox["k", "2"]}]]]}], ")"}]}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"1", "+", 
+               SuperscriptBox["k", "2"]}]]], 
+            RowBox[{"Cos", "[", "t", "]"}], 
+            RowBox[{"(", 
+             RowBox[{"x", "-", 
+              RowBox[{
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]], 
+               RowBox[{"Cos", "[", "t", "]"}]}]}], ")"}]}], "+", 
+           RowBox[{
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               SuperscriptBox["k", "2"], 
+               SuperscriptBox["a", "2"]}], 
+              RowBox[{"1", "+", 
+               SuperscriptBox["k", "2"]}]]], 
+            RowBox[{"Sin", "[", "t", "]"}], 
+            RowBox[{"(", 
+             RowBox[{"y", "-", 
+              RowBox[{
+               SqrtBox[
+                FractionBox[
+                 RowBox[{
+                  SuperscriptBox["k", "2"], 
+                  SuperscriptBox["a", "2"]}], 
+                 RowBox[{"2", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    SuperscriptBox["k", "2"]}], ")"}]}]]], 
+               RowBox[{"Sin", "[", "t", "]"}]}]}], ")"}]}], "-", 
+           RowBox[{
+            SuperscriptBox["k", "2"], 
+            SqrtBox[
+             FractionBox[
+              SuperscriptBox["a", "2"], 
+              RowBox[{"1", "+", 
+               SuperscriptBox["k", "2"]}]]], 
+            RowBox[{"(", 
+             RowBox[{"z", "-", 
+              SqrtBox[
+               FractionBox[
+                SuperscriptBox["a", "2"], 
+                RowBox[{"1", "+", 
+                 SuperscriptBox["k", "2"]}]]]}], ")"}]}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"y", ",", 
+          RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", 
+          RowBox[{"-", "a"}], ",", "a"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"ContourStyle", "\[Rule]", 
+         RowBox[{"Opacity", "[", ".6", "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Mesh", "\[Rule]", "None"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"AxesLabel", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y", ",", "z"}], "}"}]}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", 
+        RowBox[{"2", "\[Pi]"}], ",", "0.25"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<perpendicular3.gif\>\"", ",", "plots"}], "]"}], ";"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6537322160210457`*^9, 3.6537322671933546`*^9}, 
+   3.653732414416236*^9}]
+},
+WindowSize->{922, 748},
+WindowMargins->{{Automatic, 400}, {Automatic, 25}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4006, 115, 521, "Input"],
+Cell[4588, 139, 3012, 59, 787, "Output"]
+}, Open  ]],
+Cell[7615, 201, 4294, 116, 525, "Input",
+ CellGroupingRules->{$CellContext`GroupTogetherGrouping, 10000.}],
+Cell[CellGroupData[{
+Cell[11934, 321, 5269, 158, 708, "Input"],
+Cell[17206, 481, 3533, 70, 787, "Output"]
+}, Open  ]],
+Cell[20754, 554, 6023, 165, 665, "Input",
+ CellGroupingRules->{$CellContext`GroupTogetherGrouping, 10000.}],
+Cell[CellGroupData[{
+Cell[26802, 723, 5713, 167, 816, "Input"],
+Cell[32518, 892, 3571, 66, 787, "Output"]
+}, Open  ]],
+Cell[36104, 961, 5997, 166, 675, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

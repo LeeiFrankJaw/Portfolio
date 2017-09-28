@@ -1,0 +1,60 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 595 842
+%%HiResBoundingBox: 0 0 595.28 841.89
+%%Title: Truchet Pattern
+%%For: Lei Zhao
+%%EndComments
+
+(%Calendar%) currentdevparams
+dup /Day get 24 mul
+/t exch def
+dup /Hour get t add 60 mul
+/t exch def
+dup /Minute get t add 60 mul
+/t exch def
+/Second get t add
+/t exch def
+
+t srand
+
+/Courier-Bold 8 selectfont
+14.15 2.3 moveto
+t 12 string cvs show
+newpath
+
+2.834645669291339 dup scale
+
+5 4 translate
+1 setlinecap
+
+0 0 200 290 rectstroke
+
+1 setlinejoin
+.25 setlinewidth
+100 145 translate
+
+/W 10 def
+/W2 {W 2 div} bind def
+
+/DRAWUNIT {
+	gsave
+	translate rotate
+	% W2 neg W2 neg W2 0 90 arc stroke
+	% W2 W2 W2 180 270 arc stroke
+	W2 neg W2 moveto
+	W2 W2 neg lineto
+	W2 W2 lineto
+	closepath
+	gsave stroke grestore fill
+	grestore
+} def
+
+-95 W 95 {
+	/x exch def
+	-140 W 140 {
+		/y exch def
+		rand 4 mod 90 mul x y DRAWUNIT
+	} for
+} for

@@ -1,0 +1,54 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 196 146
+%%Title: Stickers
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/W 14 def
+/H 10 def
+/gap 4 def
+/Wgap W //gap add def
+/Hgap H //gap add def
+/fsize 5 def
+/Helvetica-Roman //fsize selectfont
+
+/draw {
+	gsave
+	3 1 roll
+	translate
+	1 .749 0 setrgbcolor
+	0 0 //W //H rectfill
+	0 0 moveto
+	dup dup
+	W exch stringwidth pop sub 2 div
+	exch false charpath flattenpath pathbbox
+	3 2 roll sub
+	H exch sub 2 div
+	3 1 roll
+	pop pop
+	moveto
+	0 setgray
+	show
+	grestore
+} def
+
+10 131 translate
+1 1 100 {
+	dup
+	4 string cvs
+	exch
+	dup
+	1 sub 10 mod //Wgap mul
+	exch
+	1 sub 10 idiv //Hgap mul neg
+	3 2 roll
+	draw
+} for
+
+showpage
+%%EOF

@@ -1,0 +1,32 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+FrankZ@FrankZ-PC c:$ javac Ex7_2.java && appletviewer.exe Ex7_2
+javac Ex7_2.java && appletviewer.exe Ex7_2
+I/O exception while reading: c:\Users\FrankZ\Desktop\Links\4747\Chapter 7\Ex7_2\Ex7_2 (The system cannot find the file specified)
+
+FrankZ@FrankZ-PC c:$ javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+Ex7_2.java:16: error: not a statement
+	}p
+	 ^
+Ex7_2.java:16: error: ';' expected
+	}p
+	  ^
+2 errors
+
+FrankZ@FrankZ-PC c:$ javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+javac Ex7_2.java && appletviewer.exe Ex7_2.html 
+
+FrankZ@FrankZ-PC c:$ 
+Process shell finished
+

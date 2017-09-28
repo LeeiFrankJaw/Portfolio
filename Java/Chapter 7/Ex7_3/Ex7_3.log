@@ -1,0 +1,89 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+Ex7_3.java:21: error: <identifier> expected
+	} catch (InterruptedException) {}
+	                             ^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+Ex7_3.java:11: error: variable g might not have been initialized
+	g.drawOval(300, 300, 200, 200);
+	^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+javac Ex7_3.java && appletviewer.exe Ex7_3.html 
+
+FrankZ@FrankZ-PC c:$ 
+Process shell finished
+

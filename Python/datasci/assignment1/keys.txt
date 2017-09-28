@@ -1,0 +1,2881 @@
+﻿Python 2.7.3 |EPD_free 7.3-2 (32-bit)| (default, Apr 12 2012, 14:30:37) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> def getfield(filename, field):
+	from json im
+KeyboardInterrupt
+>>> from json import loads
+>>> ================================ RESTART ================================
+>>> loads
+
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    loads
+NameError: name 'loads' is not defined
+>>> ================================ RESTART ================================
+>>> import json
+>>> def getfield(filename, field):
+	with open(filename) as f:
+		values = []
+		for line in f:
+			result = json.loads(line)
+			if result.has_key(field):
+				value = result[field]
+				if value != None:
+					values.append(value)
+		return values
+
+	
+>>> values = getfield('output.txt', 'coordinates')
+>>> map(print, values)
+SyntaxError: invalid syntax
+>>> for elem in values:
+	print elem
+
+	
+{u'type': u'Point', u'coordinates': [25.4748538, 35.28962377]}
+{u'type': u'Point', u'coordinates': [-76.9975317, -12.0832876]}
+{u'type': u'Point', u'coordinates': [121.15236926, 14.05906923]}
+{u'type': u'Point', u'coordinates': [50.05141103, 26.3620706]}
+{u'type': u'Point', u'coordinates': [-73.7320412, 40.7558804]}
+{u'type': u'Point', u'coordinates': [109.3280711, -0.0324941]}
+{u'type': u'Point', u'coordinates': [1.1538401, 49.0046775]}
+{u'type': u'Point', u'coordinates': [-76.21511911, 36.81388694]}
+{u'type': u'Point', u'coordinates': [29.0933788, 40.9677392]}
+{u'type': u'Point', u'coordinates': [2.17029803, 48.75627397]}
+{u'type': u'Point', u'coordinates': [121.005596, 14.6008992]}
+{u'type': u'Point', u'coordinates': [39.1659903, 21.5236781]}
+{u'type': u'Point', u'coordinates': [139.707242, 35.761498]}
+{u'type': u'Point', u'coordinates': [-98.11937636, 19.07342272]}
+{u'type': u'Point', u'coordinates': [-0.55334198, 38.19354405]}
+{u'type': u'Point', u'coordinates': [-80.70232999, 32.21533226]}
+{u'type': u'Point', u'coordinates': [102.0996859, 15.0126638]}
+{u'type': u'Point', u'coordinates': [32.6485975, 39.9740661]}
+{u'type': u'Point', u'coordinates': [-81.70830384, 39.25607995]}
+{u'type': u'Point', u'coordinates': [-84.58876052, 10.35698373]}
+{u'type': u'Point', u'coordinates': [153.33657368, -27.88064199]}
+{u'type': u'Point', u'coordinates': [21.22542755, 42.44467115]}
+{u'type': u'Point', u'coordinates': [139.75478508, 36.01008745]}
+{u'type': u'Point', u'coordinates': [139.68559614, 35.72847984]}
+{u'type': u'Point', u'coordinates': [-71.42039301, 41.80836644]}
+{u'type': u'Point', u'coordinates': [55.2577937, 25.1943609]}
+{u'type': u'Point', u'coordinates': [-76.41892153, 40.10707141]}
+>>> coordinates = values
+>>> coordinates is values
+True
+>>> places = getfield('output.txt', 'place')
+>>> a
+
+Traceback (most recent call last):
+  File "<pyshell#23>", line 1, in <module>
+    a
+NameError: name 'a' is not defined
+>>> a = [1,2]
+>>> a[:20]
+[1, 2]
+>>> for elem in places[:20]:
+	print elem
+
+	
+{u'country_code': u'GR', u'url': u'https://api.twitter.com/1.1/geo/id/2ee7eeaa84dbe65a.json', u'country': u'Greece', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[19.3729582, 34.8020213], [19.3729582, 41.7485356], [29.6430578, 41.7485356], [29.6430578, 34.8020213]]]}, u'contained_within': [], u'full_name': u'Greece', u'attributes': {}, u'id': u'2ee7eeaa84dbe65a', u'name': u'Greece'}
+{u'country_code': u'AL', u'url': u'https://api.twitter.com/1.1/geo/id/82779978c58253a6.json', u'country': u'Albania', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[19.2720325110001, 39.637013245], [19.2720325110001, 42.6548135380001], [21.0366793210001, 42.6548135380001], [21.0366793210001, 39.637013245]]]}, u'contained_within': [], u'full_name': u'Albania', u'attributes': {}, u'id': u'82779978c58253a6', u'name': u'Albania'}
+{u'country_code': u'PE', u'url': u'https://api.twitter.com/1.1/geo/id/2dfa9ecb0179a4e4.json', u'country': u'Peru', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-81.337557529, -18.3377462069379], [-81.337557529, -0.0290927119999083], [-68.6842524829999, -0.0290927119999083], [-68.6842524829999, -18.3377462069379]]]}, u'contained_within': [], u'full_name': u'Peru', u'attributes': {}, u'id': u'2dfa9ecb0179a4e4', u'name': u'Peru'}
+{u'country_code': u'PH', u'url': u'https://api.twitter.com/1.1/geo/id/0c4cd224fc7fb579.json', u'country': u'Republic of the Philippines', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[120.5217413, 13.1641528], [120.5217413, 15.2164987], [122.8029446, 15.2164987], [122.8029446, 13.1641528]]]}, u'contained_within': [], u'full_name': u'Calabarzon, Republic of the Philippines', u'attributes': {}, u'id': u'0c4cd224fc7fb579', u'name': u'Calabarzon'}
+{u'country_code': u'SA', u'url': u'https://api.twitter.com/1.1/geo/id/001ad0741538b980.json', u'country': u'\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[44.6569686, 17.0167619], [44.6569686, 29.1031061], [55.6666671, 29.1031061], [55.6666671, 17.0167619]]]}, u'contained_within': [], u'full_name': u'\u0627\u0644\u0634\u0631\u0642\u064a, \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'attributes': {}, u'id': u'001ad0741538b980', u'name': u'\u0627\u0644\u0634\u0631\u0642\u064a'}
+{u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/27485069891a7938.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-74.04725, 40.541722], [-74.04725, 40.91533], [-73.699793, 40.91533], [-73.699793, 40.541722]]]}, u'contained_within': [], u'full_name': u'New York, NY', u'attributes': {}, u'id': u'27485069891a7938', u'name': u'New York'}
+{u'country_code': u'ID', u'url': u'https://api.twitter.com/1.1/geo/id/6e0f0a00ef60a2bf.json', u'country': u'Indonesia', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[108.5949, -3.03971], [108.5949, 2.0810503], [114.2008722, 2.0810503], [114.2008722, -3.03971]]]}, u'contained_within': [], u'full_name': u'West Borneo, Indonesia', u'attributes': {}, u'id': u'6e0f0a00ef60a2bf', u'name': u'West Borneo'}
+{u'country_code': u'FR', u'url': u'https://api.twitter.com/1.1/geo/id/6de7fe2e93b29f54.json', u'country': u'France', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[1.086879, 48.9893495], [1.086879, 49.0467375], [1.1894853, 49.0467375], [1.1894853, 48.9893495]]]}, u'contained_within': [], u'full_name': u'Evreux, Eure', u'attributes': {}, u'id': u'6de7fe2e93b29f54', u'name': u'Evreux'}
+{u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/84229b03659050aa.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-76.22808, 36.697434], [-76.22808, 36.932399], [-75.924792, 36.932399], [-75.924792, 36.697434]]]}, u'contained_within': [], u'full_name': u'Virginia Beach, VA', u'attributes': {}, u'id': u'84229b03659050aa', u'name': u'Virginia Beach'}
+{u'country_code': u'FR', u'url': u'https://api.twitter.com/1.1/geo/id/11942bc2ec4ebc14.json', u'country': u'France', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[2.1352001, 48.7146879], [2.1352001, 48.7587515], [2.2037114, 48.7587515], [2.2037114, 48.7146879]]]}, u'contained_within': [], u'full_name': u'Saclay, Essonne', u'attributes': {}, u'id': u'11942bc2ec4ebc14', u'name': u'Saclay'}
+{u'country_code': u'PH', u'url': u'https://api.twitter.com/1.1/geo/id/53df18e21825a89c.json', u'country': u'Republic of the Philippines', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[120.8986521, 14.3477314], [120.8986521, 14.7873208], [121.1357656, 14.7873208], [121.1357656, 14.3477314]]]}, u'contained_within': [], u'full_name': u'National Capital Region, Republic of the Philippines', u'attributes': {}, u'id': u'53df18e21825a89c', u'name': u'National Capital Region'}
+{u'country_code': u'SA', u'url': u'https://api.twitter.com/1.1/geo/id/015370b145fe9c9f.json', u'country': u'\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[38.629207, 18.666432], [38.629207, 24.0030262], [43.645527, 24.0030262], [43.645527, 18.666432]]]}, u'contained_within': [], u'full_name': u'\u0645\u0643\u0629 \u0627\u0644\u0645\u0643\u0631\u0645\u0629, \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'attributes': {}, u'id': u'015370b145fe9c9f', u'name': u'\u0645\u0643\u0629 \u0627\u0644\u0645\u0643\u0631\u0645\u0629'}
+{u'country_code': u'JP', u'url': u'https://api.twitter.com/1.1/geo/id/0fd33386c57b038a.json', u'country': u'\u65e5\u672c', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[139.627791139739, 35.7325510022406], [139.627791139739, 35.7971529978313], [139.721015006142, 35.7971529978313], [139.721015006142, 35.7325510022406]]]}, u'contained_within': [], u'full_name': u'\u677f\u6a4b\u533a', u'attributes': {}, u'id': u'0fd33386c57b038a', u'name': u'\u677f\u6a4b\u533a'}
+{u'country_code': u'MX', u'url': u'https://api.twitter.com/1.1/geo/id/0ac8a42f23e8f736.json', u'country': u'M\xe9xico', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-98.289206, 18.83765], [-98.289206, 19.226809], [-98.019327, 19.226809], [-98.019327, 18.83765]]]}, u'contained_within': [], u'full_name': u'Puebla, Puebla', u'attributes': {}, u'id': u'0ac8a42f23e8f736', u'name': u'Puebla'}
+{u'country_code': u'ES', u'url': u'https://api.twitter.com/1.1/geo/id/704b0ae75e396861.json', u'country': u'Espa\xf1a', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.6701864, 38.1521405], [-0.6701864, 38.2472027], [-0.5071023, 38.2472027], [-0.5071023, 38.1521405]]]}, u'contained_within': [], u'full_name': u'Santa Pola, Alicante', u'attributes': {}, u'id': u'704b0ae75e396861', u'name': u'Santa Pola'}
+{u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/4de231505cdae11f.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-80.828921, 32.10853], [-80.828921, 32.271075], [-80.668573, 32.271075], [-80.668573, 32.10853]]]}, u'contained_within': [], u'full_name': u'Hilton Head Island, SC', u'attributes': {}, u'id': u'4de231505cdae11f', u'name': u'Hilton Head Island'}
+{u'country_code': u'TH', u'url': u'https://api.twitter.com/1.1/geo/id/019a1d646471c226.json', u'country': u'\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[101.9324988, 14.789611], [101.9324988, 15.1404898], [102.2308174, 15.1404898], [102.2308174, 14.789611]]]}, u'contained_within': [], u'full_name': u'Amphoe Mueang Nakhon Ratchasima, Nakhon Ratchasima', u'attributes': {}, u'id': u'019a1d646471c226', u'name': u'Amphoe Mueang Nakhon Ratchasima'}
+{u'country_code': u'TR', u'url': u'https://api.twitter.com/1.1/geo/id/5fcdccd779e7376a.json', u'country': u'T\xfcrkiye', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[32.5968439, 39.9020544], [32.5968439, 40.006192], [32.763573, 40.006192], [32.763573, 39.9020544]]]}, u'contained_within': [], u'full_name': u'Etimesgut', u'attributes': {}, u'id': u'5fcdccd779e7376a', u'name': u'Etimesgut'}
+{u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/de599025180e2ee7.json', u'country': u'United States', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-84.820272, 38.403186], [-84.820272, 42.327133], [-80.518626, 42.327133], [-80.518626, 38.403186]]]}, u'contained_within': [], u'full_name': u'Ohio, USA', u'attributes': {}, u'id': u'de599025180e2ee7', u'name': u'Ohio'}
+{u'country_code': u'CR', u'url': u'https://api.twitter.com/1.1/geo/id/e44e7dc5a2e1c3f1.json', u'country': u'Costa Rica', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-87.1176651679999, 5.51508209800006], [-87.1176651679999, 11.2099370320001], [-82.5628368739999, 11.2099370320001], [-82.5628368739999, 5.51508209800006]]]}, u'contained_within': [], u'full_name': u'Costa Rica', u'attributes': {}, u'id': u'e44e7dc5a2e1c3f1', u'name': u'Costa Rica'}
+>>> places[0]
+{u'country_code': u'GR', u'url': u'https://api.twitter.com/1.1/geo/id/2ee7eeaa84dbe65a.json', u'country': u'Greece', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[19.3729582, 34.8020213], [19.3729582, 41.7485356], [29.6430578, 41.7485356], [29.6430578, 34.8020213]]]}, u'contained_within': [], u'full_name': u'Greece', u'attributes': {}, u'id': u'2ee7eeaa84dbe65a', u'name': u'Greece'}
+>>> places[0]['country']
+u'Greece'
+>>> print places[0]['country']
+Greece
+>>> places[0].keys()
+[u'country_code', u'url', u'country', u'place_type', u'bounding_box', u'contained_within', u'full_name', u'attributes', u'id', u'name']
+>>> for k in places[0].keys():
+	print k
+
+	
+country_code
+url
+country
+place_type
+bounding_box
+contained_within
+full_name
+attributes
+id
+name
+>>> us_places = map(lambda pl: pl['country_code'] == 'US', places)
+>>> len(us_places)
+30
+>>> for k in us_places[0].keys():
+	print k
+
+	
+
+Traceback (most recent call last):
+  File "<pyshell#40>", line 1, in <module>
+    for k in us_places[0].keys():
+AttributeError: 'bool' object has no attribute 'keys'
+>>> type(us_places)
+<type 'list'>
+>>> us_places
+[False, False, False, False, False, True, False, False, True, False, False, False, False, False, False, True, False, False, True, False, False, False, False, False, False, False, True, False, True, False]
+>>> us_places = filter(lambda pl: pl['country_code'] == 'US', places)
+>>> len(places)
+30
+>>> places
+[{u'country_code': u'GR', u'url': u'https://api.twitter.com/1.1/geo/id/2ee7eeaa84dbe65a.json', u'country': u'Greece', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[19.3729582, 34.8020213], [19.3729582, 41.7485356], [29.6430578, 41.7485356], [29.6430578, 34.8020213]]]}, u'contained_within': [], u'full_name': u'Greece', u'attributes': {}, u'id': u'2ee7eeaa84dbe65a', u'name': u'Greece'}, {u'country_code': u'AL', u'url': u'https://api.twitter.com/1.1/geo/id/82779978c58253a6.json', u'country': u'Albania', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[19.2720325110001, 39.637013245], [19.2720325110001, 42.6548135380001], [21.0366793210001, 42.6548135380001], [21.0366793210001, 39.637013245]]]}, u'contained_within': [], u'full_name': u'Albania', u'attributes': {}, u'id': u'82779978c58253a6', u'name': u'Albania'}, {u'country_code': u'PE', u'url': u'https://api.twitter.com/1.1/geo/id/2dfa9ecb0179a4e4.json', u'country': u'Peru', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-81.337557529, -18.3377462069379], [-81.337557529, -0.0290927119999083], [-68.6842524829999, -0.0290927119999083], [-68.6842524829999, -18.3377462069379]]]}, u'contained_within': [], u'full_name': u'Peru', u'attributes': {}, u'id': u'2dfa9ecb0179a4e4', u'name': u'Peru'}, {u'country_code': u'PH', u'url': u'https://api.twitter.com/1.1/geo/id/0c4cd224fc7fb579.json', u'country': u'Republic of the Philippines', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[120.5217413, 13.1641528], [120.5217413, 15.2164987], [122.8029446, 15.2164987], [122.8029446, 13.1641528]]]}, u'contained_within': [], u'full_name': u'Calabarzon, Republic of the Philippines', u'attributes': {}, u'id': u'0c4cd224fc7fb579', u'name': u'Calabarzon'}, {u'country_code': u'SA', u'url': u'https://api.twitter.com/1.1/geo/id/001ad0741538b980.json', u'country': u'\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[44.6569686, 17.0167619], [44.6569686, 29.1031061], [55.6666671, 29.1031061], [55.6666671, 17.0167619]]]}, u'contained_within': [], u'full_name': u'\u0627\u0644\u0634\u0631\u0642\u064a, \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'attributes': {}, u'id': u'001ad0741538b980', u'name': u'\u0627\u0644\u0634\u0631\u0642\u064a'}, {u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/27485069891a7938.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-74.04725, 40.541722], [-74.04725, 40.91533], [-73.699793, 40.91533], [-73.699793, 40.541722]]]}, u'contained_within': [], u'full_name': u'New York, NY', u'attributes': {}, u'id': u'27485069891a7938', u'name': u'New York'}, {u'country_code': u'ID', u'url': u'https://api.twitter.com/1.1/geo/id/6e0f0a00ef60a2bf.json', u'country': u'Indonesia', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[108.5949, -3.03971], [108.5949, 2.0810503], [114.2008722, 2.0810503], [114.2008722, -3.03971]]]}, u'contained_within': [], u'full_name': u'West Borneo, Indonesia', u'attributes': {}, u'id': u'6e0f0a00ef60a2bf', u'name': u'West Borneo'}, {u'country_code': u'FR', u'url': u'https://api.twitter.com/1.1/geo/id/6de7fe2e93b29f54.json', u'country': u'France', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[1.086879, 48.9893495], [1.086879, 49.0467375], [1.1894853, 49.0467375], [1.1894853, 48.9893495]]]}, u'contained_within': [], u'full_name': u'Evreux, Eure', u'attributes': {}, u'id': u'6de7fe2e93b29f54', u'name': u'Evreux'}, {u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/84229b03659050aa.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-76.22808, 36.697434], [-76.22808, 36.932399], [-75.924792, 36.932399], [-75.924792, 36.697434]]]}, u'contained_within': [], u'full_name': u'Virginia Beach, VA', u'attributes': {}, u'id': u'84229b03659050aa', u'name': u'Virginia Beach'}, {u'country_code': u'FR', u'url': u'https://api.twitter.com/1.1/geo/id/11942bc2ec4ebc14.json', u'country': u'France', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[2.1352001, 48.7146879], [2.1352001, 48.7587515], [2.2037114, 48.7587515], [2.2037114, 48.7146879]]]}, u'contained_within': [], u'full_name': u'Saclay, Essonne', u'attributes': {}, u'id': u'11942bc2ec4ebc14', u'name': u'Saclay'}, {u'country_code': u'PH', u'url': u'https://api.twitter.com/1.1/geo/id/53df18e21825a89c.json', u'country': u'Republic of the Philippines', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[120.8986521, 14.3477314], [120.8986521, 14.7873208], [121.1357656, 14.7873208], [121.1357656, 14.3477314]]]}, u'contained_within': [], u'full_name': u'National Capital Region, Republic of the Philippines', u'attributes': {}, u'id': u'53df18e21825a89c', u'name': u'National Capital Region'}, {u'country_code': u'SA', u'url': u'https://api.twitter.com/1.1/geo/id/015370b145fe9c9f.json', u'country': u'\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[38.629207, 18.666432], [38.629207, 24.0030262], [43.645527, 24.0030262], [43.645527, 18.666432]]]}, u'contained_within': [], u'full_name': u'\u0645\u0643\u0629 \u0627\u0644\u0645\u0643\u0631\u0645\u0629, \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629', u'attributes': {}, u'id': u'015370b145fe9c9f', u'name': u'\u0645\u0643\u0629 \u0627\u0644\u0645\u0643\u0631\u0645\u0629'}, {u'country_code': u'JP', u'url': u'https://api.twitter.com/1.1/geo/id/0fd33386c57b038a.json', u'country': u'\u65e5\u672c', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[139.627791139739, 35.7325510022406], [139.627791139739, 35.7971529978313], [139.721015006142, 35.7971529978313], [139.721015006142, 35.7325510022406]]]}, u'contained_within': [], u'full_name': u'\u677f\u6a4b\u533a', u'attributes': {}, u'id': u'0fd33386c57b038a', u'name': u'\u677f\u6a4b\u533a'}, {u'country_code': u'MX', u'url': u'https://api.twitter.com/1.1/geo/id/0ac8a42f23e8f736.json', u'country': u'M\xe9xico', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-98.289206, 18.83765], [-98.289206, 19.226809], [-98.019327, 19.226809], [-98.019327, 18.83765]]]}, u'contained_within': [], u'full_name': u'Puebla, Puebla', u'attributes': {}, u'id': u'0ac8a42f23e8f736', u'name': u'Puebla'}, {u'country_code': u'ES', u'url': u'https://api.twitter.com/1.1/geo/id/704b0ae75e396861.json', u'country': u'Espa\xf1a', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.6701864, 38.1521405], [-0.6701864, 38.2472027], [-0.5071023, 38.2472027], [-0.5071023, 38.1521405]]]}, u'contained_within': [], u'full_name': u'Santa Pola, Alicante', u'attributes': {}, u'id': u'704b0ae75e396861', u'name': u'Santa Pola'}, {u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/4de231505cdae11f.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-80.828921, 32.10853], [-80.828921, 32.271075], [-80.668573, 32.271075], [-80.668573, 32.10853]]]}, u'contained_within': [], u'full_name': u'Hilton Head Island, SC', u'attributes': {}, u'id': u'4de231505cdae11f', u'name': u'Hilton Head Island'}, {u'country_code': u'TH', u'url': u'https://api.twitter.com/1.1/geo/id/019a1d646471c226.json', u'country': u'\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[101.9324988, 14.789611], [101.9324988, 15.1404898], [102.2308174, 15.1404898], [102.2308174, 14.789611]]]}, u'contained_within': [], u'full_name': u'Amphoe Mueang Nakhon Ratchasima, Nakhon Ratchasima', u'attributes': {}, u'id': u'019a1d646471c226', u'name': u'Amphoe Mueang Nakhon Ratchasima'}, {u'country_code': u'TR', u'url': u'https://api.twitter.com/1.1/geo/id/5fcdccd779e7376a.json', u'country': u'T\xfcrkiye', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[32.5968439, 39.9020544], [32.5968439, 40.006192], [32.763573, 40.006192], [32.763573, 39.9020544]]]}, u'contained_within': [], u'full_name': u'Etimesgut', u'attributes': {}, u'id': u'5fcdccd779e7376a', u'name': u'Etimesgut'}, {u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/de599025180e2ee7.json', u'country': u'United States', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-84.820272, 38.403186], [-84.820272, 42.327133], [-80.518626, 42.327133], [-80.518626, 38.403186]]]}, u'contained_within': [], u'full_name': u'Ohio, USA', u'attributes': {}, u'id': u'de599025180e2ee7', u'name': u'Ohio'}, {u'country_code': u'CR', u'url': u'https://api.twitter.com/1.1/geo/id/e44e7dc5a2e1c3f1.json', u'country': u'Costa Rica', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-87.1176651679999, 5.51508209800006], [-87.1176651679999, 11.2099370320001], [-82.5628368739999, 11.2099370320001], [-82.5628368739999, 5.51508209800006]]]}, u'contained_within': [], u'full_name': u'Costa Rica', u'attributes': {}, u'id': u'e44e7dc5a2e1c3f1', u'name': u'Costa Rica'}, {u'country_code': u'AU', u'url': u'https://api.twitter.com/1.1/geo/id/017453ae077eafd3.json', u'country': u'Australia', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[153.186551712, -28.2003171475], [153.186551712, -27.708126368], [153.552171232, -27.708126368], [153.552171232, -28.2003171475]]]}, u'contained_within': [], u'full_name': u'Gold Coast', u'attributes': {}, u'id': u'017453ae077eafd3', u'name': u'Gold Coast'}, {u'country_code': u'XK', u'url': u'https://api.twitter.com/1.1/geo/id/ce840961e49976cf.json', u'country': u'Kosovo', u'place_type': u'country', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[20.0467606, 41.8569794], [20.0467606, 43.2739105], [21.8070393, 43.2739105], [21.8070393, 41.8569794]]]}, u'contained_within': [], u'full_name': u'Kosovo', u'attributes': {}, u'id': u'ce840961e49976cf', u'name': u'Kosovo'}, {u'country_code': u'JP', u'url': u'https://api.twitter.com/1.1/geo/id/930a0e94b38ef6d3.json', u'country': u'\u65e5\u672c', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[139.684049001625, 35.9835410037911], [139.684049001625, 36.0587490011494], [139.759068005095, 36.0587490011494], [139.759068005095, 35.9835410037911]]]}, u'contained_within': [], u'full_name': u'\u5bae\u4ee3\u753a\uff08\u5357\u57fc\u7389\u90e1\uff09, 11', u'attributes': {}, u'id': u'930a0e94b38ef6d3', u'name': u'\u5bae\u4ee3\u753a\uff08\u5357\u57fc\u7389\u90e1\uff09'}, {u'country_code': u'RU', u'url': u'https://api.twitter.com/1.1/geo/id/986e795b28a1d2c8.json', u'country': u'Russia', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[33.0257031, 68.8530353], [33.0257031, 69.0552], [33.2461747, 69.0552], [33.2461747, 68.8530353]]]}, u'contained_within': [], u'full_name': u'\u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a, \u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a', u'attributes': {}, u'id': u'986e795b28a1d2c8', u'name': u'\u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a'}, {u'country_code': u'BR', u'url': u'https://api.twitter.com/1.1/geo/id/639cdc444f2c74db.json', u'country': u'Brasil', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-52.9935677, -31.6709025], [-52.9935677, -30.8820957], [-52.2405295, -30.8820957], [-52.2405295, -31.6709025]]]}, u'contained_within': [], u'full_name': u'Cangu\xe7u, Rio Grande do Sul', u'attributes': {}, u'id': u'639cdc444f2c74db', u'name': u'Cangu\xe7u'}, {u'country_code': u'JP', u'url': u'https://api.twitter.com/1.1/geo/id/7efb0fd5276fdda5.json', u'country': u'\u65e5\u672c', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[139.678025995451, 35.7100740057117], [139.678025995451, 35.7434119989074], [139.751473996623, 35.7434119989074], [139.751473996623, 35.7100740057117]]]}, u'contained_within': [], u'full_name': u'\u8c4a\u5cf6\u533a', u'attributes': {}, u'id': u'7efb0fd5276fdda5', u'name': u'\u8c4a\u5cf6\u533a'}, {u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/7b93be1d864cedbb.json', u'country': u'United States', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-71.472644, 41.772455], [-71.472644, 41.861713], [-71.369479, 41.861713], [-71.369479, 41.772455]]]}, u'contained_within': [], u'full_name': u'Providence, RI', u'attributes': {}, u'id': u'7b93be1d864cedbb', u'name': u'Providence'}, {u'country_code': u'AE', u'url': u'https://api.twitter.com/1.1/geo/id/001907e868d06e24.json', u'country': u'\u0627\u0644\u0627\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[54.8939725, 24.6182526], [54.8939725, 25.3686719], [56.2083722, 25.3686719], [56.2083722, 24.6182526]]]}, u'contained_within': [], u'full_name': u'\u062f\u0628\u064a, \u0627\u0644\u0627\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629', u'attributes': {}, u'id': u'001907e868d06e24', u'name': u'\u062f\u0628\u064a'}, {u'country_code': u'US', u'url': u'https://api.twitter.com/1.1/geo/id/dd9c503d6c35364b.json', u'country': u'United States', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-80.519851, 39.719801], [-80.519851, 42.516072], [-74.689517, 42.516072], [-74.689517, 39.719801]]]}, u'contained_within': [], u'full_name': u'Pennsylvania, USA', u'attributes': {}, u'id': u'dd9c503d6c35364b', u'name': u'Pennsylvania'}, {u'country_code': u'FR', u'url': u'https://api.twitter.com/1.1/geo/id/df9cb72656eba326.json', u'country': u'France', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[1.5550088, 49.9690362], [1.5550088, 51.0887708], [4.2308007, 51.0887708], [4.2308007, 49.9690362]]]}, u'contained_within': [], u'full_name': u'Nord-Pas de Calais, France', u'attributes': {}, u'id': u'df9cb72656eba326', u'name': u'Nord-Pas de Calais'}]
+>>> len(us_places)
+6
+>>> for k in us_places[0].keys():
+	print k
+
+	
+country_code
+url
+country
+place_type
+bounding_box
+contained_within
+full_name
+attributes
+id
+name
+>>> for us_place in us_places:
+	for k in us_place.keys():
+		print k + '\t' + us_place[k]
+
+		
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/27485069891a7938.json
+country	United States
+place_type	city
+
+Traceback (most recent call last):
+  File "<pyshell#53>", line 3, in <module>
+    print k + '\t' + us_place[k]
+TypeError: coercing to Unicode: need string or buffer, dict found
+>>> for us_place in us_places:
+	for k in us_place.keys():
+		print k + '\t' + str(us_place[k])
+
+		
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/27485069891a7938.json
+country	United States
+place_type	city
+bounding_box	{u'type': u'Polygon', u'coordinates': [[[-74.04725, 40.541722], [-74.04725, 40.91533], [-73.699793, 40.91533], [-73.699793, 40.541722]]]}
+contained_within	[]
+full_name	New York, NY
+attributes	{}
+id	27485069891a7938
+name	New York
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/84229b03659050aa.json
+country	United States
+place_type	city
+bounding_box	{u'type': u'Polygon', u'coordinates': [[[-76.22808, 36.697434], [-76.22808, 36.932399], [-75.924792, 36.932399], [-75.924792, 36.697434]]]}
+contained_within	[]
+full_name	Virginia Beach, VA
+attributes	{}
+id	84229b03659050aa
+name	Virginia Beach
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/4de231505cdae11f.json
+country	United States
+place_type	city
+bounding_box	{u'type': u'Polygon', u'coordinates': [[[-80.828921, 32.10853], [-80.828921, 32.271075], [-80.668573, 32.271075], [-80.668573, 32.10853]]]}
+contained_within	[]
+full_name	Hilton Head Island, SC
+attributes	{}
+id	4de231505cdae11f
+name	Hilton Head Island
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/de599025180e2ee7.json
+country	United States
+place_type	admin
+bounding_box	{u'type': u'Polygon', u'coordinates': [[[-84.820272, 38.403186], [-84.820272, 42.327133], [-80.518626, 42.327133], [-80.518626, 38.403186]]]}
+contained_within	[]
+full_name	Ohio, USA
+attributes	{}
+id	de599025180e2ee7
+name	Ohio
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/7b93be1d864cedbb.json
+country	United States
+place_type	city
+bounding_box	{u'type': u'Polygon', u'coordinates': [[[-71.472644, 41.772455], [-71.472644, 41.861713], [-71.369479, 41.861713], [-71.369479, 41.772455]]]}
+contained_within	[]
+full_name	Providence, RI
+attributes	{}
+id	7b93be1d864cedbb
+name	Providence
+country_code	US
+url	https://api.twitter.com/1.1/geo/id/dd9c503d6c35364b.json
+country	United States
+place_type	admin
+bounding_box	{u'type': u'Polygon', u'coordinates': [[[-80.519851, 39.719801], [-80.519851, 42.516072], [-74.689517, 42.516072], [-74.689517, 39.719801]]]}
+contained_within	[]
+full_name	Pennsylvania, USA
+attributes	{}
+id	dd9c503d6c35364b
+name	Pennsylvania
+>>> for us_place in us_places:
+	print 'full_name' + '\t' + us_place['full_name']
+	print 'name' + '\t' + us_place['full_name']
+
+	
+full_name	New York, NY
+name	New York, NY
+full_name	Virginia Beach, VA
+name	Virginia Beach, VA
+full_name	Hilton Head Island, SC
+name	Hilton Head Island, SC
+full_name	Ohio, USA
+name	Ohio, USA
+full_name	Providence, RI
+name	Providence, RI
+full_name	Pennsylvania, USA
+name	Pennsylvania, USA
+>>> for us_place in us_places:
+	print 'full_name' + '\t' + us_place['full_name']
+	print 'name' + '\t\t' + us_place['full_name']
+
+	
+full_name	New York, NY
+name		New York, NY
+full_name	Virginia Beach, VA
+name		Virginia Beach, VA
+full_name	Hilton Head Island, SC
+name		Hilton Head Island, SC
+full_name	Ohio, USA
+name		Ohio, USA
+full_name	Providence, RI
+name		Providence, RI
+full_name	Pennsylvania, USA
+name		Pennsylvania, USA
+>>> for us_place in us_places:
+	print 'full_name' + '\t' + us_place['full_name']
+	print 'name' + '\t\t' + us_place['name']
+
+	
+full_name	New York, NY
+name		New York
+full_name	Virginia Beach, VA
+name		Virginia Beach
+full_name	Hilton Head Island, SC
+name		Hilton Head Island
+full_name	Ohio, USA
+name		Ohio
+full_name	Providence, RI
+name		Providence
+full_name	Pennsylvania, USA
+name		Pennsylvania
+>>> users = getfield('output.txt', 'user')
+>>> len(users)
+1480
+>>> len(places)
+30
+>>> users[0].keys()
+[u'follow_request_sent', u'profile_use_background_image', u'default_profile_image', u'id', u'profile_background_image_url_https', u'verified', u'profile_image_url_https', u'profile_sidebar_fill_color', u'profile_text_color', u'followers_count', u'profile_sidebar_border_color', u'id_str', u'profile_background_color', u'listed_count', u'is_translation_enabled', u'utc_offset', u'statuses_count', u'description', u'friends_count', u'location', u'profile_link_color', u'profile_image_url', u'following', u'geo_enabled', u'profile_banner_url', u'profile_background_image_url', u'name', u'lang', u'profile_background_tile', u'favourites_count', u'screen_name', u'notifications', u'url', u'created_at', u'contributors_enabled', u'time_zone', u'protected', u'default_profile', u'is_translator']
+>>> for k in users[0].keys():
+	print k + '\t' + str(users[0][k])
+
+	
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+
+Traceback (most recent call last):
+  File "<pyshell#69>", line 2, in <module>
+    print k + '\t' + str(users[0][k])
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-12: ordinal not in range(128)
+>>> for k in users[0].keys():
+	print k + '\t' + users[0][k]
+
+	
+
+Traceback (most recent call last):
+  File "<pyshell#71>", line 2, in <module>
+    print k + '\t' + users[0][k]
+TypeError: coercing to Unicode: need string or buffer, NoneType found
+>>> for k in users[0].keys():
+	print k + '\t' + users[0][k]
+
+	
+
+Traceback (most recent call last):
+  File "<pyshell#73>", line 2, in <module>
+    print k + '\t' + users[0][k]
+TypeError: coercing to Unicode: need string or buffer, NoneType found
+>>> for k in users[0].keys():
+	print k + '\t' + users[0][k]
+KeyboardInterrupt
+>>> str(None)
+'None'
+>>> for k in users[0].keys():
+	print k + '\t' + str(users[0][k])
+
+	
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+
+Traceback (most recent call last):
+  File "<pyshell#76>", line 2, in <module>
+    print k + '\t' + str(users[0][k])
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-12: ordinal not in range(128)
+>>> for k in users[0].keys():
+	print k
+
+	
+follow_request_sent
+profile_use_background_image
+default_profile_image
+id
+profile_background_image_url_https
+verified
+profile_image_url_https
+profile_sidebar_fill_color
+profile_text_color
+followers_count
+profile_sidebar_border_color
+id_str
+profile_background_color
+listed_count
+is_translation_enabled
+utc_offset
+statuses_count
+description
+friends_count
+location
+profile_link_color
+profile_image_url
+following
+geo_enabled
+profile_banner_url
+profile_background_image_url
+name
+lang
+profile_background_tile
+favourites_count
+screen_name
+notifications
+url
+created_at
+contributors_enabled
+time_zone
+protected
+default_profile
+is_translator
+>>> users[0]['description']
+u'\u30b9\u30a4\u30fc\u30c8\u30d7\u30ea\u30ad\u30e5\u30a2\u304c\u597d\u304d\u306aJC3\u3067\u3059\u3002\u30e9\u30a4\u30d6DIOAF34\u524d\u671f\u578b\u306b\u30e9\u30a4\u30d6DIOZXAF34\u524d\u671f\u578b\u30a8\u30f3\u30b8\u30f3\u8f09\u305b\u305f\u308a\u3057\u3066\u4e57\u3063\u3066\u307e\u3059\u3002'
+>>> import locale
+>>> locale.getdefaultlocale()
+('en_US', 'cp936')
+>>> dir(locale)
+['CHAR_MAX', 'Error', 'LC_ALL', 'LC_COLLATE', 'LC_CTYPE', 'LC_MONETARY', 'LC_NUMERIC', 'LC_TIME', '__all__', '__builtins__', '__doc__', '__file__', '__name__', '__package__', '_ascii_lower_map', '_build_localename', '_format', '_group', '_grouping_intervals', '_localeconv', '_override_localeconv', '_parse_localename', '_percent_re', '_print_locale', '_setlocale', '_strip_padding', '_test', 'atof', 'atoi', 'currency', 'encodings', 'format', 'format_string', 'functools', 'getdefaultlocale', 'getlocale', 'getpreferredencoding', 'locale_alias', 'locale_encoding_alias', 'localeconv', 'normalize', 'operator', 're', 'resetlocale', 'setlocale', 'str', 'strcoll', 'strxfrm', 'sys', 'windows_locale']
+>>> locale.getlocale()
+('English_United States', '1252')
+>>> print users[0]['description']
+スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+>>> for k in users[0].keys():
+	try:
+		print k + '\t' + str(users[0][k])
+	except:
+		print k
+
+		
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+>>> for k in users[0].keys():
+	try:
+		print k + '\t' + str(users[0][k])
+	except:
+		print k + '<--------------"
+		
+SyntaxError: EOL while scanning string literal
+>>> for k in users[0].keys():
+	try:
+		print k + '\t' + str(users[0][k])
+	except:
+		print k + '<--------------'
+
+		
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description<--------------
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name<--------------
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+>>> for k in users[0].keys():
+	try:
+		if user[0][k] != None:
+			print k + '\t' + users[0][k]
+	except:
+		print k + '<--------------'
+
+		
+follow_request_sent<--------------
+profile_use_background_image<--------------
+default_profile_image<--------------
+id<--------------
+profile_background_image_url_https<--------------
+verified<--------------
+profile_image_url_https<--------------
+profile_sidebar_fill_color<--------------
+profile_text_color<--------------
+followers_count<--------------
+profile_sidebar_border_color<--------------
+id_str<--------------
+profile_background_color<--------------
+listed_count<--------------
+is_translation_enabled<--------------
+utc_offset<--------------
+statuses_count<--------------
+description<--------------
+friends_count<--------------
+location<--------------
+profile_link_color<--------------
+profile_image_url<--------------
+following<--------------
+geo_enabled<--------------
+profile_banner_url<--------------
+profile_background_image_url<--------------
+name<--------------
+lang<--------------
+profile_background_tile<--------------
+favourites_count<--------------
+screen_name<--------------
+notifications<--------------
+url<--------------
+created_at<--------------
+contributors_enabled<--------------
+time_zone<--------------
+protected<--------------
+default_profile<--------------
+is_translator<--------------
+>>> for k in users[0].keys():
+	try:
+		if users[0][k] != None:
+			print k + '\t' + users[0][k]
+	except:
+		print k + '<--------------'
+
+		
+profile_use_background_image<--------------
+default_profile_image<--------------
+id<--------------
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified<--------------
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count<--------------
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count<--------------
+is_translation_enabled<--------------
+utc_offset<--------------
+statuses_count<--------------
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count<--------------
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+geo_enabled<--------------
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile<--------------
+favourites_count<--------------
+screen_name	RKC7saki
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled<--------------
+time_zone	Tokyo
+protected<--------------
+default_profile<--------------
+is_translator<--------------
+>>> for k in users[0].keys():
+	try:
+		print k + '\t' + str(users[0][k])
+	except:
+		print k + '\t' + users[0][k]
+
+		
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+>>> 
+		print k + '\t' + users[0][k]
+KeyboardInterrupt
+>>> for user in users[:20]:
+	for k in user.keys():
+		try:
+			print k + '\t' + str(users[0][k])
+		except:
+			print k + '\t' + users[0][k]
+
+			
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	398055319
+profile_background_image_url_https	https://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	721
+profile_sidebar_border_color	FFFFFF
+id_str	398055319
+profile_background_color	C0DEED
+listed_count	38
+is_translation_enabled	False
+utc_offset	32400
+statuses_count	119429
+description	スイートプリキュアが好きなJC3です。ライブDIOAF34前期型にライブDIOZXAF34前期型エンジン載せたりして乗ってます。
+friends_count	864
+location	
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484842513350397952/cm8xGTBV_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/398055319/1400425214
+profile_background_image_url	http://pbs.twimg.com/profile_background_images/475821617600147456/IFqPqiBQ.jpeg
+name	上海蟹七咲
+lang	ja
+profile_background_tile	False
+favourites_count	13090
+screen_name	RKC7saki
+notifications	None
+url	http://twpf.jp/RKC7saki
+created_at	Tue Oct 25 14:27:40 +0000 2011
+contributors_enabled	False
+time_zone	Tokyo
+protected	False
+default_profile	False
+is_translator	False
+>>> users = getfield('english.txt', 'user')
+>>> len(users)
+359
+>>> len(users)
+359
+>>> for user in users[:5]:
+	for k in user.keys():
+		try:
+			print k + '\t' + str(users[0][k])
+		except:
+			print k + '\t' + users[0][k]
+
+			
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+>>> for user in users[:5]:
+	print '___________________________________________________________'
+	for k in user.keys():
+		try:
+			print k + '\t' + str(users[0][k])
+		except:
+			print k + '\t' + users[0][k]
+
+			
+___________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+___________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+___________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+___________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+___________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+>>> for user in users[:5]:
+	print '_' * 80
+	for k in user.keys():
+		try:
+			print k + '\t' + str(users[0][k])
+		except:
+			print k + '\t' + users[0][k]
+
+			
+________________________________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+________________________________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+________________________________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+________________________________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+________________________________________________________________________________
+follow_request_sent	None
+profile_use_background_image	True
+default_profile_image	False
+id	204035191
+profile_background_image_url_https	https://abs.twimg.com/images/themes/theme1/bg.png
+verified	False
+profile_image_url_https	https://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+profile_sidebar_fill_color	DDEEF6
+profile_text_color	333333
+followers_count	88
+profile_sidebar_border_color	C0DEED
+id_str	204035191
+profile_background_color	C0DEED
+listed_count	0
+is_translation_enabled	False
+utc_offset	-25200
+statuses_count	1191
+description	CASH TALK
+friends_count	47
+location	NYC
+profile_link_color	0084B4
+profile_image_url	http://pbs.twimg.com/profile_images/484373102533435392/tBTtmeqp_normal.jpeg
+following	None
+geo_enabled	False
+profile_banner_url	https://pbs.twimg.com/profile_banners/204035191/1401325774
+profile_background_image_url	http://abs.twimg.com/images/themes/theme1/bg.png
+name	VENDETTA
+lang	en
+profile_background_tile	False
+favourites_count	517
+screen_name	_affiliated
+notifications	None
+url	http://legallystoned.tumblr.com/
+created_at	Sun Oct 17 19:35:55 +0000 2010
+contributors_enabled	False
+time_zone	Pacific Time (US & Canada)
+protected	False
+default_profile	True
+is_translator	False
+>>> for user in users:
+	print user['location']
+
+	
+NYC
+São Paulo, Brasil
+
+
+Ulujami, Jakarta, Indonesia
+Hertfordshire, Hitchin
+
+Chicago
+3/5 The Vamps 4/4 The Secrets
+West Chester Pa
+albania
+no/5|band/4(other acc)|3/4(UJ)
+
+US
+Dearborn Hights
+
+
+
+Dublin, Ireland
+Enniskillen
+low key , but local 
+In Some Pussy Near You ☑️.
+Perth
+Tyvärr inte Stockholm
+Eastside!
+
+Kisi k Dil mein ♥
+met 5sos 26-3-14, wwa 31-5-14✞
+
+Evelyn is mine (:
+
+Namibia
+
+
+Online
+Riyadh, Saudi Arabia
+New York
+           ♡   London  ♡
+
+
+Tokyo-Japan
+Indianapolis, IN, USA
+ INDIA
+
+Perth
+
+
+
+Worldwide
+Dreamland
+Manchester 
+Bitch Im Waldo 
+Kanata, Ontario
+
+Earth
+Ireland
+England.
+With Jungkook
+Coral Gables, FL
+
+EXOPlANET✔
+Perth Wa Australia 
+Newcastle
+triangle
+Matawan, NJ
+
+
+Broadway, NC
+France, mostly
+
+31.08.12
+Rotherham, South Yorkshire
+With Yo Bm
+Jamaica
+GEKARI HALELUYA
+
+Dallas      Texas
+
+portland
+
+Manila
+deercelene@gmail.com
+
+Sharjah-UAE
+Cambridge
+Anywhere but here, PA
+
+
+
+manchester
+
+boca raton, fl
+Dhaka,Bangladesh
+was zayumlox
+
+New Kittytown
+Sippin on Rosé with Kate.
+now Brazil
+The place where God puts me :)
+where im @!
+
+↓ bitch ↓
+jcoghei-igy-yaoistyle-vampyaoi
+
+Glasgow, UK
+방탄소년단
+united states
+Around the world. HQ: Germany
+Johannesburg
+Korea Ansan
+
+France
+
+The Key
+
+Killaaah City
+Manchester
+Melksham
+
+gazaville
+melbourne | 5/4
+
+idgaf
+Rule 1 Plan to win every Race 
+
+
+317 ✈️ 
+
+
+Quezon City, Philippines
+
+United States
+San Teodoro, Sardinia Italy
+
+somewhere tropical, usa
+
+Italy
+Global
+Philippines
+
+0⃣1⃣2⃣6⃣1⃣4⃣
+
+cry/4 | PH 
+Beacon Hells
+03.11.14 CC♡ | SR JW MC BW SS
+justin is my king
+jamaica
+
+Birmingham, AL; Hampton, VA
+
+
+Hawesville, KY
+Tbilisi, Georgia
+NEW ORLEANS
+
+
+
+carpe diem !
+Stamford, CT
+Everywhere
+
+
+Virtual Paradise
+Atlanta,Ga
+In my head
+New York, NY
+Colwall Worcestershire u.k
+stafford 
+
+
+
+Slum Village 
+Cork
+Melbourne
+Melbourne, Australia
+
+{DLSU || s20 || better places}
+Fort Worth
+In bed
+Poland/Heart in UK♥
+Lois iz my lyfe 4eva ❤️
+
+
+The Netherlands
+Switzerland
+Accra
+Arlington
+South Africa, Cape Town
+
+Boulder, Colorado
+(✿◠‿◠)
+
+2220613
+kuantan
+Elkhart, Texas
+Jakarta | Indonesia
+
+lrh + band/4
+Newcastle
+Belgium
+
+
+right behind planet earth
+
+philippines
+phillipines
+New Hartford, CT
+
+#HUNTERS
+EN,CN,AU,AR,UK
+Beverly, MA
+
+ 18 yo ~ METZ
+
+Texas
+Singapore|Maldives
+
+Instagram : @Fety_Fenaa 
+Brisvegas, Straya
+Owen Sound, Ontario, Canada
+lh/4 · bb/5+jano · cb/4 ·
+ⓓ
+Florida
+
+Glasgow
+
+
+UK
+ID
+Newcastle upon Tyne, England
+
+Self Reflecting in the Mirror
+toronto eh?
+Empire State Of Mind
+MIA ♋
+
+
+Ariana and Jennette follows
+
+kuching, sarawak
+march 31 10:30 am 
+
+Belgium
+
+Murdaville City, GA
+
+『exo shinee bap got7 bts+more』
+Somewhere in MA
+IraN
+
+
+Florida 
+Harrisburg Area
+Caracas 
+Fort Lauderdale, FL 33308
+
+
+
+Phoenix, AZ ✈ Baltimore, MD
+Holyoke Massachusets
+
+
+Atlanta, GA
+Austin
+
+Yorkshire, UK
+Krypton
+
+Youtube
+
+jersey city yall
+
+Las Vegas, Nevada
+ IG: wtvrlis
+so chas ॐ
+beyond my galaxy
+APELSINALAND
+Northumberland
+Sofia, Bulgaria (NARNIA)
+Houston Texas
+
+Austin, TX
+
+15 Yemen Road, Yemen
+Kuantan, Pahang
+0/4 0/5 1/6 0/5 + alex ramos
+
+
+
+Doha/Salford
+USA
+around @obrieandylan's arms
+Quebec
+Croatia ☀
+Chicago
+ Poland
+{RP - Spider-Man - Multiverse]
+
+@imdanielpadilla's 
+
+Franklin, OH
+5/6 • 6/7 •oatmeal gang
+london
+
+indonesia
+
+Lost in the Stars
+Florida
+Make your best mistakes.
+Tampa, FL
+Laterrière
+Iowa
+Paris
+egypt and lebanon
+Chicago, Il
+
+Amritsar
+Johannesburg
+Toronto, ON
+orland park, IL
+insta&snapchat- caatherinedoig
+Eat, Sleep, Hoop
+
+
+Godey ✌️
+In Dinahs pocket
+⚓️
+Sta. Maria, Bulacan
+ig: helloaping  ;)
+USA
+platform 9-3/4
+4712 Dream Side
+0/5 0/5 0/4 卌 
+Marina del Rey, Cali
+NY/NJ
+California Dreaming. #ECU 
+nzf
+
+USA
+New Washington, Aklan, PH
+with Lexus 
+
+Austin
+lost in his eyes
+Ibiza
+
+
+
+DIRECTIONER 4EVER
+
+ÜT: 10.6038375,-61.3488628
+
+PARTYNEXTDOOR 
+
+7 Mile
+Land Before Time
+
+ALL OVER THE MID WEST
+
+>>> len(users)
+359
+>>> for user in users:
+	print user['location']
+
+	
+NYC
+São Paulo, Brasil
+
+
+Ulujami, Jakarta, Indonesia
+Hertfordshire, Hitchin
+
+Chicago
+3/5 The Vamps 4/4 The Secrets
+West Chester Pa
+albania
+no/5|band/4(other acc)|3/4(UJ)
+
+US
+Dearborn Hights
+
+
+
+Dublin, Ireland
+Enniskillen
+low key , but local 
+In Some Pussy Near You ☑️.
+Perth
+Tyvärr inte Stockholm
+Eastside!
+
+Kisi k Dil mein ♥
+met 5sos 26-3-14, wwa 31-5-14✞
+
+Evelyn is mine (:
+
+Namibia
+
+
+Online
+Riyadh, Saudi Arabia
+New York
+           ♡   London  ♡
+
+
+Tokyo-Japan
+Indianapolis, IN, USA
+ INDIA
+
+Perth
+
+
+
+Worldwide
+Dreamland
+Manchester 
+Bitch Im Waldo 
+Kanata, Ontario
+
+Earth
+Ireland
+England.
+With Jungkook
+Coral Gables, FL
+
+EXOPlANET✔
+Perth Wa Australia 
+Newcastle
+triangle
+Matawan, NJ
+
+
+Broadway, NC
+France, mostly
+
+31.08.12
+Rotherham, South Yorkshire
+With Yo Bm
+Jamaica
+GEKARI HALELUYA
+
+Dallas      Texas
+
+portland
+
+Manila
+deercelene@gmail.com
+
+Sharjah-UAE
+Cambridge
+Anywhere but here, PA
+
+
+
+manchester
+
+boca raton, fl
+Dhaka,Bangladesh
+was zayumlox
+
+New Kittytown
+Sippin on Rosé with Kate.
+now Brazil
+The place where God puts me :)
+where im @!
+
+↓ bitch ↓
+jcoghei-igy-yaoistyle-vampyaoi
+
+Glasgow, UK
+방탄소년단
+united states
+Around the world. HQ: Germany
+Johannesburg
+Korea Ansan
+
+France
+
+The Key
+
+Killaaah City
+Manchester
+Melksham
+
+gazaville
+melbourne | 5/4
+
+idgaf
+Rule 1 Plan to win every Race 
+
+
+317 ✈️ 
+
+
+Quezon City, Philippines
+
+United States
+San Teodoro, Sardinia Italy
+
+somewhere tropical, usa
+
+Italy
+Global
+Philippines
+
+0⃣1⃣2⃣6⃣1⃣4⃣
+
+cry/4 | PH 
+Beacon Hells
+03.11.14 CC♡ | SR JW MC BW SS
+justin is my king
+jamaica
+
+Birmingham, AL; Hampton, VA
+
+
+Hawesville, KY
+Tbilisi, Georgia
+NEW ORLEANS
+
+
+
+carpe diem !
+Stamford, CT
+Everywhere
+
+
+Virtual Paradise
+Atlanta,Ga
+In my head
+New York, NY
+Colwall Worcestershire u.k
+stafford 
+
+
+
+Slum Village 
+Cork
+Melbourne
+Melbourne, Australia
+
+{DLSU || s20 || better places}
+Fort Worth
+In bed
+Poland/Heart in UK♥
+Lois iz my lyfe 4eva ❤️
+
+
+The Netherlands
+Switzerland
+Accra
+Arlington
+South Africa, Cape Town
+
+Boulder, Colorado
+(✿◠‿◠)
+
+2220613
+kuantan
+Elkhart, Texas
+Jakarta | Indonesia
+
+lrh + band/4
+Newcastle
+Belgium
+
+
+right behind planet earth
+
+philippines
+phillipines
+New Hartford, CT
+
+#HUNTERS
+EN,CN,AU,AR,UK
+Beverly, MA
+
+ 18 yo ~ METZ
+
+Texas
+Singapore|Maldives
+
+Instagram : @Fety_Fenaa 
+Brisvegas, Straya
+Owen Sound, Ontario, Canada
+lh/4 · bb/5+jano · cb/4 ·
+ⓓ
+Florida
+
+Glasgow
+
+
+UK
+ID
+Newcastle upon Tyne, England
+
+Self Reflecting in the Mirror
+toronto eh?
+Empire State Of Mind
+MIA ♋
+
+
+Ariana and Jennette follows
+
+kuching, sarawak
+march 31 10:30 am 
+
+Belgium
+
+Murdaville City, GA
+
+『exo shinee bap got7 bts+more』
+Somewhere in MA
+IraN
+
+
+Florida 
+Harrisburg Area
+Caracas 
+Fort Lauderdale, FL 33308
+
+
+
+Phoenix, AZ ✈ Baltimore, MD
+Holyoke Massachusets
+
+
+Atlanta, GA
+Austin
+
+Yorkshire, UK
+Krypton
+
+Youtube
+
+jersey city yall
+
+Las Vegas, Nevada
+ IG: wtvrlis
+so chas ॐ
+beyond my galaxy
+APELSINALAND
+Northumberland
+Sofia, Bulgaria (NARNIA)
+Houston Texas
+
+Austin, TX
+
+15 Yemen Road, Yemen
+Kuantan, Pahang
+0/4 0/5 1/6 0/5 + alex ramos
+
+
+
+Doha/Salford
+USA
+around @obrieandylan's arms
+Quebec
+Croatia ☀
+Chicago
+ Poland
+{RP - Spider-Man - Multiverse]
+
+@imdanielpadilla's 
+
+Franklin, OH
+5/6 • 6/7 •oatmeal gang
+london
+
+indonesia
+
+Lost in the Stars
+Florida
+Make your best mistakes.
+Tampa, FL
+Laterrière
+Iowa
+Paris
+egypt and lebanon
+Chicago, Il
+
+Amritsar
+Johannesburg
+Toronto, ON
+orland park, IL
+insta&snapchat- caatherinedoig
+Eat, Sleep, Hoop
+
+
+Godey ✌️
+In Dinahs pocket
+⚓️
+Sta. Maria, Bulacan
+ig: helloaping  ;)
+USA
+platform 9-3/4
+4712 Dream Side
+0/5 0/5 0/4 卌 
+Marina del Rey, Cali
+NY/NJ
+California Dreaming. #ECU 
+nzf
+
+USA
+New Washington, Aklan, PH
+with Lexus 
+
+Austin
+lost in his eyes
+Ibiza
+
+
+
+DIRECTIONER 4EVER
+
+ÜT: 10.6038375,-61.3488628
+
+PARTYNEXTDOOR 
+
+7 Mile
+Land Before Time
+
+ALL OVER THE MID WEST
+
+>>> coordinates
+[{u'type': u'Point', u'coordinates': [25.4748538, 35.28962377]}, {u'type': u'Point', u'coordinates': [-76.9975317, -12.0832876]}, {u'type': u'Point', u'coordinates': [121.15236926, 14.05906923]}, {u'type': u'Point', u'coordinates': [50.05141103, 26.3620706]}, {u'type': u'Point', u'coordinates': [-73.7320412, 40.7558804]}, {u'type': u'Point', u'coordinates': [109.3280711, -0.0324941]}, {u'type': u'Point', u'coordinates': [1.1538401, 49.0046775]}, {u'type': u'Point', u'coordinates': [-76.21511911, 36.81388694]}, {u'type': u'Point', u'coordinates': [29.0933788, 40.9677392]}, {u'type': u'Point', u'coordinates': [2.17029803, 48.75627397]}, {u'type': u'Point', u'coordinates': [121.005596, 14.6008992]}, {u'type': u'Point', u'coordinates': [39.1659903, 21.5236781]}, {u'type': u'Point', u'coordinates': [139.707242, 35.761498]}, {u'type': u'Point', u'coordinates': [-98.11937636, 19.07342272]}, {u'type': u'Point', u'coordinates': [-0.55334198, 38.19354405]}, {u'type': u'Point', u'coordinates': [-80.70232999, 32.21533226]}, {u'type': u'Point', u'coordinates': [102.0996859, 15.0126638]}, {u'type': u'Point', u'coordinates': [32.6485975, 39.9740661]}, {u'type': u'Point', u'coordinates': [-81.70830384, 39.25607995]}, {u'type': u'Point', u'coordinates': [-84.58876052, 10.35698373]}, {u'type': u'Point', u'coordinates': [153.33657368, -27.88064199]}, {u'type': u'Point', u'coordinates': [21.22542755, 42.44467115]}, {u'type': u'Point', u'coordinates': [139.75478508, 36.01008745]}, {u'type': u'Point', u'coordinates': [139.68559614, 35.72847984]}, {u'type': u'Point', u'coordinates': [-71.42039301, 41.80836644]}, {u'type': u'Point', u'coordinates': [55.2577937, 25.1943609]}, {u'type': u'Point', u'coordinates': [-76.41892153, 40.10707141]}]
+>>> for coord in coordinates:
+	for k in coord.keys():
+		print k + '\t' + str(coord[k])
+
+		
+type	Point
+coordinates	[25.4748538, 35.28962377]
+type	Point
+coordinates	[-76.9975317, -12.0832876]
+type	Point
+coordinates	[121.15236926, 14.05906923]
+type	Point
+coordinates	[50.05141103, 26.3620706]
+type	Point
+coordinates	[-73.7320412, 40.7558804]
+type	Point
+coordinates	[109.3280711, -0.0324941]
+type	Point
+coordinates	[1.1538401, 49.0046775]
+type	Point
+coordinates	[-76.21511911, 36.81388694]
+type	Point
+coordinates	[29.0933788, 40.9677392]
+type	Point
+coordinates	[2.17029803, 48.75627397]
+type	Point
+coordinates	[121.005596, 14.6008992]
+type	Point
+coordinates	[39.1659903, 21.5236781]
+type	Point
+coordinates	[139.707242, 35.761498]
+type	Point
+coordinates	[-98.11937636, 19.07342272]
+type	Point
+coordinates	[-0.55334198, 38.19354405]
+type	Point
+coordinates	[-80.70232999, 32.21533226]
+type	Point
+coordinates	[102.0996859, 15.0126638]
+type	Point
+coordinates	[32.6485975, 39.9740661]
+type	Point
+coordinates	[-81.70830384, 39.25607995]
+type	Point
+coordinates	[-84.58876052, 10.35698373]
+type	Point
+coordinates	[153.33657368, -27.88064199]
+type	Point
+coordinates	[21.22542755, 42.44467115]
+type	Point
+coordinates	[139.75478508, 36.01008745]
+type	Point
+coordinates	[139.68559614, 35.72847984]
+type	Point
+coordinates	[-71.42039301, 41.80836644]
+type	Point
+coordinates	[55.2577937, 25.1943609]
+type	Point
+coordinates	[-76.41892153, 40.10707141]
+>>> users[0]['location']
+u'NYC'
+>>> places[0]['full_name']
+u'Greece'
+>>> places[0]['name']
+u'Greece'
+>>> us_places[0]['name']
+u'New York'
+>>> us_places[0]['full_name']
+u'New York, NY'
+>>> len(getfield('output.txt', 'coordinates'))
+27
+>>> len(getfield('output.txt', 'place'))
+30
+>>> len(getfield('output.txt', 'user'))
+1480
+>>> len(getfield('output.txt', 'text'))
+1480
+>>> 

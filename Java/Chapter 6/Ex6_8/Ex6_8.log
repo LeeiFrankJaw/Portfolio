@@ -1,0 +1,210 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+FrankZ@FrankZ-PC c:$ path
+path
+PATH=C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Users\FrankZ\introcs\java\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES\WINDOWS LIVE\SHARED;D:\PROGRAM FILES\FPC\2.6.0\BIN\I386-WIN32;C:\Program Files\Lenovo\Bluetooth Software\;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\SMLNJ\bin\;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Users\FrankZ\introcs\j3d\bin;C:\Users\FrankZ\introcs\bin;C:\Users\FrankZ\introcs\java\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES\WINDOWS LIVE\SHARED;D:\PROGRAM FILES\FPC\2.6.0\BIN\I386-WIN32;C:\Program Files\Lenovo\Bluetooth Software\;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\SMLNJ\bin\;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;D:\Program Files\Python32;C:\Python27;C:\Python27\Scripts;D:\Scripts;D:\Program Files\Notepad++;D:\Program Files\nano;C:\Program Files\Java\jdk1.7.0_02\bin;.;;.;
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:8: error: constructor MyFrame in class MyFrame cannot be applied to given types;
+	MyFrame frame = new MyFrame("Mouse Event Demo Program");
+	                ^
+  required: no arguments
+  found: String
+  reason: actual and formal argument lists differ in length
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mouseExited(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+2 errors
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mouseExited(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mouseExited(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mouseEntered(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mouseReleased(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mousePressed(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:12: error: MyFrame is not abstract and does not override abstract method mouseClicked(MouseEvent) in MouseListener
+class MyFrame extends JFrame implements MouseListener {
+^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+java.lang.ClassCastException: Ex6_8 cannot be cast to java.applet.Applet
+	at sun.applet.AppletPanel.createApplet(AppletPanel.java:795)
+	at sun.applet.AppletPanel.runLoader(AppletPanel.java:724)
+	at sun.applet.AppletPanel.run(AppletPanel.java:378)
+	at java.lang.Thread.run(Thread.java:722)
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$xb 
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+java.lang.NullPointerException
+	at MyPanel.print(Ex6_8.java:58)
+	at MyFrame.<init>(Ex6_8.java:20)
+	at Ex6_8.init(Ex6_8.java:8)
+	at sun.applet.AppletPanel.run(AppletPanel.java:434)
+	at java.lang.Thread.run(Thread.java:722)
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+java.lang.NullPointerException
+	at MyPanel.print(Ex6_8.java:58)
+	at MyFrame.<init>(Ex6_8.java:20)
+	at Ex6_8.init(Ex6_8.java:8)
+	at sun.applet.AppletPanel.run(AppletPanel.java:434)
+	at java.lang.Thread.run(Thread.java:722)
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:17: error: ';' expected
+    final static String[] mouseStates = {"Mouse is presed", "Mouse is released", "Mouse has entered", "Mouse has exited"}
+                                                                                                                         ^
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:41: error: method append in class JTextArea cannot be applied to given types;
+	jta.append(mouseStates);
+	   ^
+  required: String
+  found: String[]
+  reason: actual argument String[] cannot be converted to String by method invocation conversion
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:42: error: method append in class JTextArea cannot be applied to given types;
+	jta.append(mouseStates);
+	   ^
+  required: String
+  found: String[]
+  reason: actual argument String[] cannot be converted to String by method invocation conversion
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:15: error: cannot find symbol
+    JScrollPane jscp = JScrollPane(jta);
+                       ^
+  symbol:   method JScrollPane(JTextArea)
+  location: class MyFrame
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+Ex6_8.java:30: error: cannot find symbol
+	p.addMouseListenler(this);
+	 ^
+  symbol:   method addMouseListenler(MyFrame)
+  location: variable p of type MyPanel
+1 error
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ javac Ex6_8.java && appletviewer.exe Ex6_8.html
+javac Ex6_8.java && appletviewer.exe Ex6_8.html
+
+FrankZ@FrankZ-PC c:$ 
+Process shell finished
+

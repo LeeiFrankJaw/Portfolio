@@ -1,0 +1,11 @@
+Scripts/*.exe
+Scripts/RemoveSIDFromACL
+Scala/*.zip
+Scala/*/lib_managed
+ANSI_C/*.pdf
+ANSI_C/*.[Cc][Hh][Mm]
+**/*.zip
+**/*.exe
+target/
+__pycache__/
+__MACOSX/

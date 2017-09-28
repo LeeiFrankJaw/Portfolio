@@ -1,0 +1,248 @@
+%!PS-Adobe-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%Orientation: Portrait
+%%DocumentMedia: a4 595.275591 841.889764 75 white ()
+%%BoundingBox: 4 4 592 838
+%%HiResBoundingBox: 4.110258 4.110258 591.165334 837.779529
+%%Title: Walkthru Peter Fischer PS Intro
+%%For: Lei Zhao
+%%Pages: 2
+%%EndComments
+%%BeginSetup
+/PW 595.275591 def
+/PH 841.889764 def
+/pt2mm 2.834646 def
+<< /PageSize [PW PH] >> setpagedevice
+%%EndSetup
+
+%%Page: Cover 1
+%%BeginPageSetup
+mark /Label (Cover)
+	/PAGELABEL pdfmark
+%%EndPageSetup
+
+gsave
+newpath
+10 10 moveto
+40 10 lineto
+20 30 lineto
+1 setlinecap
+1 setlinejoin
+stroke
+grestore
+
+% 50 10 30 30 rectstroke
+gsave
+newpath
+50 10 moveto
+80 10 lineto
+80 40 lineto
+50 40 lineto
+closepath
+0 1 0 setrgbcolor
+fill
+grestore
+
+gsave
+newpath
+90 10 moveto
+100 0 rlineto
+-50 100 60 sin mul rlineto
+closepath stroke
+/tan {dup sin exch cos div} def
+/radius 50 30 tan mul def
+1 0 0 setrgbcolor
+90 50 add 10 //radius add //radius 0 360 arc fill
+grestore
+
+gsave
+1 setlinecap
+/x 210 def
+/y 10 def
+/len 100 def
+/LINE {
+	/inc exch 10 sub def
+	newpath
+	x y len add inc sub moveto
+	inc inc len sub rlineto
+	stroke
+} def
+10 LINE 20 LINE 30 LINE 40 LINE 50 LINE 60 LINE 70 LINE 80 LINE 90 LINE 100 LINE
+110 LINE
+
+/x 10 def
+/y 130 def
+/len 420 def
+10 10 len 10 add {LINE} for
+grestore
+
+
+gsave
+/BOX {
+	{1 0 0} {0 0 1} ifelse setrgbcolor
+	0 0 10 10 rectstroke
+} def
+
+180 250 translate true BOX
+12 0 translate false BOX
+grestore
+
+gsave
+1 setlinecap
+
+/rpos {
+	2 copy
+	cos mul
+	3 1 roll
+	sin mul
+} def
+
+/posadd {
+	3 2 roll
+	add
+	3 1 roll
+	add
+	exch
+} def
+
+/POLY {
+	/n exch def
+	/r exch def
+	/y exch def
+	/x exch def
+	n 3 ge {
+		/alpha 360 n div def
+		1 1 n 1 sub {
+			/i exch def
+			0 1 i 1 sub {
+				/j exch def
+				x y r i alpha mul rpos posadd moveto
+				x y r j alpha mul rpos posadd lineto
+			} for
+		} for
+		stroke
+	} if
+} def
+
+350 300 100 18 POLY
+
+/str 10 45 rpos pop 12 string cvs def
+/Times-Roman 30 selectfont 10 75 moveto str show
+grestore
+
+gsave
+100 300 translate
+/BOX {
+	0 0 10 10 rectstroke
+} def
+
+BOX
+30 20 translate BOX
+-20 10 translate
+40 rotate
+1.9 .8 scale
+BOX
+grestore
+
+gsave
+330 60 translate
+35 35 moveto
+1 1 3 {
+	pop
+	120 rotate
+	35 35 lineto
+} for
+stroke
+
+100 0 translate
+35 35 moveto
+1 1 4 {
+	pop
+	144 rotate
+	35 35 lineto
+} for
+closepath stroke
+
+85 100 translate
+1 1 36 {
+	pop
+	0 0 moveto
+	50 0 lineto
+	10 rotate
+} for
+stroke
+grestore
+
+gsave
+pt2mm dup scale
+1.5 dup translate
+.1 setlinewidth
+newpath
+0 0 moveto
+0 294 lineto
+207 294 lineto
+207 0 lineto
+closepath stroke
+grestore
+
+save
+/showpage {} def
+
+save
+160 400 translate
+include(roman.eps)
+restore
+
+save
+290 410 translate
+.5 dup scale
+include(pattern.eps)
+restore
+
+save
+50 410 translate
+include(e7.eps)
+restore
+
+save
+50 500 translate
+include(clip.eps)
+restore
+
+save
+168 500 translate
+include(clip2.eps)
+restore
+
+save
+10 822.5 translate
+.33 dup scale
+270 rotate
+include(stars.eps)
+restore
+
+save
+475 300 translate
+include(chess.eps)
+restore
+
+save
+432 125 translate
+.8 dup scale
+include(stickers.eps)
+restore
+
+save
+478 5 translate
+.5 dup scale
+include(logo.eps)
+restore
+
+restore
+
+showpage
+%PageTrailer
+
+%%Trailer
+%%EOF

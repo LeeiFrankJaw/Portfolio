@@ -1,0 +1,36 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%LanguageLevel: 2
+%%Creator:
+%%BoundingBox: 0 0 60 40
+%%Title: Exercise 7
+%%For: Lei Zhao
+%%Pages: 1
+%%EndComments
+
+%%Page: 1 1
+
+/W 40 def
+/H 20 def
+/fsize 5 def
+
+10 10 translate
+.5 setlinewidth
+0 0 W H rectstroke
+
+/str (Exercise 7) def
+/Palatino-Roman fsize selectfont
+
+0 0 moveto
+
+str false charpath flattenpath pathbbox
+3 2 roll sub
+H exch sub 2 div
+3 1 roll
+exch sub
+W exch sub 2 div
+
+exch moveto
+str show
+
+showpage
+%%EOF
