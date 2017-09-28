@@ -1,1 +1,0 @@
-line = 77, word = 204, character =  2086

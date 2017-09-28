@@ -1,0 +1,6 @@
+[submodule "ANSI_C/KandR"]
+	path = ANSI_C/KandR
+	url = git@github.com:LeeiFrankJaw/KandR.git
+[submodule "Java/iText7-jump-start"]
+	path = Java/iText7-jump-start
+	url = git@github.com:LeeiFrankJaw/iText7-jump-start.git
