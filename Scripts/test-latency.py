@@ -1,20 +1,24 @@
 #!/usr/bin/env python
 import asyncio
 import json
+import os
 import re
-import threading
+import sys
+# import threading
 from os import listdir
-from signal import SIGINT, SIGTERM
-from subprocess import PIPE, Popen
-from threading import Lock, Thread
+from signal import SIGINT, SIGTERM, SIGCHLD
+from subprocess import PIPE, STDOUT, Popen
+from threading import Thread  # , Lock
+
+# import requests
 
 p = re.compile(r'time=(.*) ms')
 
-lock = Lock()
+# lock = Lock()
 
 
 def run_in_thread(config):
-    proc = Popen(['ping', '-c', '1', config['server']], stdout=PIPE)
+    proc = Popen(['ping', '-c', '1', '-W', '1', config['server']], stdout=PIPE)
     proc.wait()
     process_result(config, proc)
 
@@ -26,9 +30,9 @@ def process_result(config, proc):
         if m:
             latency = float(m.group(1))
             print(f'{config["server"]}\t{latency} ms')
-            lock.acquire()
+            # lock.acquire()
             config['latency'] = latency
-            lock.release()
+            # lock.release()
         line = proc.stdout.readline().decode()
 
 
@@ -41,25 +45,87 @@ def load(fname):
 
 configs = [load(fname) for fname in listdir() if fname.endswith('.json')]
 
-[Thread(target=run_in_thread, args=(config,)).start()
- for config in configs]
+threads = [Thread(target=run_in_thread, args=(config,)) for config in configs]
 
-main_thread = threading.main_thread()
+for thread in threads:
+    thread.start()
 
-[t.join() for t in threading.enumerate() if t is not main_thread]
+for thread in threads:
+    thread.join()
 
-configs.sort(key=lambda x: x['latency'])
 
-fastest = configs[0]
+configs = sorted(filter(lambda x: 'latency' in x, configs),
+                 key=lambda x: x['latency'])
 
-proc = Popen(['ss-local', '-v', '-c', fastest['fname']])
+print('-' * 20)
 
-loop = asyncio.get_event_loop()
+for config in configs:
+    print(f'{config["server"]}\t{config["latency"]} ms')
 
-for signum in (SIGINT, SIGTERM):
-    loop.add_signal_handler(signum, loop.stop)
+# fastest = configs[0]
 
-try:
-    loop.run_forever()
-finally:
-    loop.close()
+# print(f'select server {fastest["server"]} ({fastest["latency"]} ms).')
+
+# sslocal = ['ss-local', '-v', '-c', fastest['fname']]
+# sslocal_shell = f'ss-local -v -c {fastest["fname"]}'
+
+# proc = Popen(sslocal)
+# stdout=PIPE, stderr=STDOUT, universal_newlines=True, bufsize=1)
+# output = os.fdopen(sys.stdout.fileno())
+
+# for line in iter(output.readline, b''):
+#     sys.stdout.write(line)
+#     sys.stdout.flush()
+
+
+# class LogProtocol(asyncio.SubprocessProtocol):
+#     def __init__(self, exit_future):
+#         self.exit_future = exit_future
+
+#     def pipe_data_received(self, fd, data):
+#         # with open('log.log', 'wb') as f:
+#         #     f.write(data)
+#         sys.stdout.buffer.write(data)
+#         sys.stdout.buffer.write('\nhere\n'.encode())
+
+#     def process_exited(self):
+#         self.exit_future.set_result(True)
+
+
+# async def start_sslocal(loop):
+#     # exit_future = asyncio.Future(loop=loop)
+#     # master, slave = os.openpty()
+#     proc = await asyncio.create_subprocess_exec(
+#         # *sslocal,
+#         './a.out',
+#         # lambda: LogProtocol(exit_future),
+#         # sys.executable, '-c', code,
+#         stdout=asyncio.subprocess.PIPE,
+#         # stdout=sys.stdout.fileno(),
+#         # stdin=sys.stdin.fileno(),
+#         stderr=sys.stderr.fileno()
+#     )
+#     line = await proc.stdout.readline()
+#     print('here')
+#     while line:
+#         sys.stdout.buffer.write(line)
+#         sys.stdout.buffer.write(line)
+#         line = await proc.stdout.readline()
+
+
+# def cleanup():
+#     proc.terminate()
+#     proc.wait()
+#     loop.stop()
+
+
+# loop = asyncio.get_event_loop()
+
+# for signum in (SIGINT, SIGTERM, SIGCHLD):
+#     loop.add_signal_handler(signum, cleanup)
+
+# try:
+#     # loop.run_until_complete(start_sslocal(loop))
+#     loop.run_forever()
+# finally:
+#     loop.close()
