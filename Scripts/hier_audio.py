@@ -51,7 +51,6 @@ def hier_audio(src_dir, dest_dir):
     if first_path is None:
         print('No supported file in directory {}'.format(src_dir))
         return
-    Path(dest_dir).mkdir(exist_ok=True)
     for path in chain([first_path], path_iter):
         print(str(path))
         audio_file = eyed3.load(str(path))
@@ -61,7 +60,7 @@ def hier_audio(src_dir, dest_dir):
         title = tag.title
         track = tag.track_num and tag.track_num[0]
         filename = '{:02} {}{}'.format(track, title, path.suffix)
-        new_path = Path(*map(sanitize, (dest_dir, artist, album, filename)))
+        new_path = Path(dest_dir, *map(sanitize, (artist, album, filename)))
         if new_path.exists():
             print('Skip existing file {}'.format(str(new_path)))
             continue
