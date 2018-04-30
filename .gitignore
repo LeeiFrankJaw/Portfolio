@@ -8,4 +8,5 @@ ANSI_C/*.[Cc][Hh][Mm]
 **/*.exe
 target/
 __pycache__/
+*.pyc
 __MACOSX/
