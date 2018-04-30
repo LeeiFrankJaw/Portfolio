@@ -52,7 +52,6 @@ def hier_audio(src_dir, dest_dir):
         print('No supported file in directory {}'.format(src_dir))
         return
     for path in chain([first_path], path_iter):
-        print(str(path))
         audio_file = eyed3.load(str(path))
         tag = audio_file.tag
         artist = tag.album_artist or tag.artist or 'Unknown Artist'
