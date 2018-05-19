@@ -54,6 +54,9 @@ def hier_audio(src_dir, dest_dir):
     for path in chain([first_path], path_iter):
         audio_file = eyed3.load(str(path))
         tag = audio_file.tag
+        if not tag:
+            print('tag is empty for audio file {}'.format(path))
+            continue
         artist = tag.album_artist or tag.artist or 'Unknown Artist'
         album = tag.album or 'Unknown Artist'
         title = tag.title
