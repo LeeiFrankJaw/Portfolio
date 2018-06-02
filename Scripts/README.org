@@ -1,0 +1,4 @@
+#+STARTUP: showall
+
+The =pdf-*.js= files are MuPDF JavaScript program and thus require
+[[https://mupdf.com/docs/manual-mutool-run.html][MuPDF]] to function normally.
