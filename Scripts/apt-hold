@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+apt list --installed "$1" |
+    sed '1d; s/^\(.*\)\/.*/\1/' |
+    xargs apt-mark hold
