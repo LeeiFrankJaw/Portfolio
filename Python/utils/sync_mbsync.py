@@ -7,7 +7,16 @@ import sched
 import sys
 import time
 from datetime import datetime
-from subprocess import call as run
+
+if sys.version_info.major == 3:
+    from subprocess import run  # type: ignore
+else:
+    from subprocess import call  # type: ignore
+    from collections import namedtuple
+    CompletedProcess = namedtuple('CompletedProcess', ['returncode'])
+
+    def run(*args, **kwargs):
+        return CompletedProcess(call(*args, **kwargs))
 
 
 def get_logger():
@@ -58,11 +67,19 @@ def repeat_every(time_diff, action, argument):
 def main():
     t1 = datetime.now()
     logger.info('job started')
-    run(['mbsync', '-a'])
+    if run(['pgrep', 'mbsync']).returncode == 0:
+        logger.info('there was already an instance of mbsync running')
+    else:
+        run(['mbsync', '-a', '-q'])
+        if run(['pgrep', '-f', 'mu server']).returncode == 0:
+            run(['emacsclient', '-e', '(mu4e-update-index)'])
+        else:
+            run(['mu', 'index', '-q'])
     t2 = datetime.now()
     logger.info('job finished')
     logger.info('duration: {}'.format(t2 - t1))
 
 
 if __name__ == '__main__':
-    sys.exit(repeat_every(60 * 15, main, ()))
+    time.sleep(60)
+    sys.exit(repeat_every(60 * 30, main, ()))
