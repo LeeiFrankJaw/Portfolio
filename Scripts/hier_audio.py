@@ -14,7 +14,6 @@ from __future__ import unicode_literals
 
 import re
 import sys
-from future_builtins import filter, map
 from itertools import chain
 
 import eyed3
@@ -23,6 +22,7 @@ import eyed3.mp3
 if sys.version_info.major == 3:
     from pathlib import Path
 else:
+    from future_builtins import filter, map
     from pathlib2 import Path
 
     def newstr(obj):
@@ -55,12 +55,15 @@ def hier_audio(src_dir, dest_dir):
         audio_file = eyed3.load(str(path))
         tag = audio_file.tag
         if not tag:
-            print('tag is empty for audio file {}'.format(path))
+            print('tag is empty for audio file {}'.format(str(path)))
             continue
         artist = tag.album_artist or tag.artist or 'Unknown Artist'
         album = tag.album or 'Unknown Artist'
         title = tag.title
         track = tag.track_num and tag.track_num[0]
+        if not track:
+            print('track is empty for audio file {}'.format(str(path)))
+            continue
         filename = '{:02} {}{}'.format(track, title, path.suffix)
         new_path = Path(dest_dir, *map(sanitize, (artist, album, filename)))
         if new_path.exists():
