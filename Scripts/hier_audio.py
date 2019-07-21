@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 r"""Copy audio files according to their tags
 
-This script requires eyeD3 to get tags from audio files.  It also
+This script requires mutagen to get tags from audio files.  It also
 requires pathlib2 when run in Python 2.
 
-    pip install eyed3
+    pip install mutagen
 
     # for Python 2
     pip install pathlib2
@@ -16,8 +16,7 @@ import re
 import sys
 from itertools import chain
 
-import eyed3
-import eyed3.mp3
+import mutagen
 
 if sys.version_info.major == 3:
     from pathlib import Path
@@ -32,8 +31,7 @@ else:
     del newstr
 
 invalid_chars = r'<>:"/\|?*'
-supported_exts = ['.mp3', '.flac']
-eyed3.mp3.EXTENSIONS = supported_exts
+supported_exts = ['.mp3', '.flac', '.m4a']
 
 
 def sanitize(name):
@@ -52,22 +50,28 @@ def hier_audio(src_dir, dest_dir):
         print('No supported file in directory {}'.format(src_dir))
         return
     for path in chain([first_path], path_iter):
-        audio_file = eyed3.load(str(path))
-        tag = audio_file.tag
+        tag = mutagen.File(str(path), easy=True)
         if not tag:
             print('tag is empty for audio file {}'.format(str(path)))
             continue
-        artist = tag.album_artist or tag.artist or 'Unknown Artist'
-        album = tag.album or 'Unknown Artist'
-        title = tag.title
-        track = tag.track_num and tag.track_num[0]
-        if not track:
+        artist = (tag.get('albumartist')
+                  or tag.get('artist', ['Unknown Artist']))[0]
+        album = tag.get('album', ['Unknown Album'])[0]
+        title = tag.get('title', [''])[0]
+        if not title:
+            print('title is empty for audio file {}'.format(str(path)))
+            continue
+        track_info = tag.get('tracknumber')
+        if not track_info:
             print('track is empty for audio file {}'.format(str(path)))
             continue
+        else:
+            track = int(track_info[0].split('/')[0])
         filename = '{:02} {}{}'.format(track, title, path.suffix)
         new_path = Path(dest_dir, *map(sanitize, (artist, album, filename)))
         if new_path.exists():
             print('Skip existing file {}'.format(str(new_path)))
+            # new_path.unlink()
             continue
         new_path.parent.mkdir(parents=True, exist_ok=True)
         print('{} -> {}'.format(str(path), str(new_path)))
