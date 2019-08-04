@@ -43,32 +43,58 @@ def is_supported(path, exts=supported_exts):
     return any(map(lambda ext: path.suffix == ext, exts))
 
 
+def list_files(src_dir):
+    for path in Path(src_dir).iterdir():
+        if path.is_dir():
+            for subpath in list_files(path):
+                yield subpath
+            else:
+                pass
+        else:
+            yield path
+
+
 def hier_audio(src_dir, dest_dir):
-    path_iter = filter(is_supported, Path(src_dir).iterdir())
+    path_iter = filter(is_supported, list_files(src_dir))
     first_path = next(path_iter, None)
     if first_path is None:
         print('No supported file in directory {}'.format(src_dir))
         return
+
     for path in chain([first_path], path_iter):
         tag = mutagen.File(str(path), easy=True)
         if not tag:
             print('tag is empty for audio file {}'.format(str(path)))
             continue
+
         artist = (tag.get('albumartist')
                   or tag.get('artist', ['Unknown Artist']))[0]
         album = tag.get('album', ['Unknown Album'])[0]
+
         title = tag.get('title', [''])[0]
         if not title:
             print('title is empty for audio file {}'.format(str(path)))
             continue
+
         track_info = tag.get('tracknumber')
         if not track_info:
             print('track is empty for audio file {}'.format(str(path)))
             continue
         else:
             track = int(track_info[0].split('/')[0])
+
         filename = '{:02} {}{}'.format(track, title, path.suffix)
-        new_path = Path(dest_dir, *map(sanitize, (artist, album, filename)))
+
+        disc = ''
+        disc_info = tag.get('discnumber')
+        if disc_info:
+            disc_num, disc_total = \
+                map(int, (disc_info[0] + '/1').split('/')[:2])
+            if disc_total > 1:
+                disc = 'Disc {}'.format(disc_num)
+                
+        rel_path = (artist, album, disc, filename)
+        new_path = Path(dest_dir, *map(sanitize, rel_path))
         if new_path.exists():
             print('Skip existing file {}'.format(str(new_path)))
             # new_path.unlink()
