@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in /var/crash/*.crash; do
+    if [ ! -e ${i::-6}.uploaded -o $i -nt ${i::-6}.uploaded ]; then
+        ls -hl $i
+        apport-cli -c $i
+    fi
+done
