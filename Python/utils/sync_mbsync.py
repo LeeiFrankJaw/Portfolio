@@ -67,9 +67,14 @@ def repeat_every(time_diff, action, argument):
 def main():
     t1 = datetime.now()
     logger.info('job started')
+    update = True
     if run(['pgrep', 'mbsync']).returncode == 0:
         logger.info('there was already an instance of mbsync running')
-    else:
+        update = False
+    if run(['pgrep', '-f', 'mu server']).returncode == 0:
+        logger.info('there was already an instance of mu server running')
+        update = False
+    if update:
         run(['mbsync', '-a', '-q'])
         if run(['pgrep', '-f', 'mu server']).returncode == 0:
             run(['emacsclient', '-e', '(mu4e-update-index)'])

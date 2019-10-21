@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for i in `sudo ipset list dirip | sed '1,8d;/comment/d' | sort`; do
+    sudo ipset test dircidr $i
+done
