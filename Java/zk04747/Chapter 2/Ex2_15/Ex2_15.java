@@ -5,8 +5,8 @@ public class Ex2_15 {
         long m, n, k;
         int j;
         String result = (String) JOptionPane.showInputDialog(null,
-		"请输入一个整数（>2）", "输入对话框", JOptionPane.PLAIN_MESSAGE,
-		null, null, null);
+                "请输入一个整数（>2）", "输入对话框", JOptionPane.PLAIN_MESSAGE,
+                null, null, null);
         m = Integer.parseInt(result);
         System.out.print("\t2");
         j = 1;

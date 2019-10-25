@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 public class Ex6_4 {
     public static void main(String[] args) {
-	ComboBoxDemo comboBoxDemo = new ComboBoxDemo();
+        ComboBoxDemo comboBoxDemo = new ComboBoxDemo();
     }
 }
 
@@ -24,36 +24,36 @@ class ComboBoxDemo extends JFrame implements ActionListener, ItemListener {
     JTextField jtf = new JTextField(10);
 
     ComboBoxDemo() {
-	jcb.addActionListener(this);
-	jcb.addItemListener(this);
-	jcb.setEditable(true);
+        jcb.addActionListener(this);
+        jcb.addItemListener(this);
+        jcb.setEditable(true);
 
-	add(jcb);
-	add(jtf);
+        add(jcb);
+        add(jtf);
 
-	setSize(WIDTH, HEIGHT);
-	getContentPane().setBackground(Color.BLUE);
-	setLayout(new FlowLayout());
-	// setLayout(new GridLayout(1, 2));
-	setLocationRelativeTo(null);
-	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	setVisible(true);
+        setSize(WIDTH, HEIGHT);
+        getContentPane().setBackground(Color.BLUE);
+        setLayout(new FlowLayout());
+        // setLayout(new GridLayout(1, 2));
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
     ComboBoxDemo(String title) {
-	this();
-	setTitle(title);
+        this();
+        setTitle(title);
     }
 
     public void actionPerformed(ActionEvent e) {
-	if (e.getSource() == jcb) {
-	    jtf.setText(jcb.getSelectedItem().toString());
-	}
+        if (e.getSource() == jcb) {
+            jtf.setText(jcb.getSelectedItem().toString());
+        }
     }
 
     public void itemStateChanged(ItemEvent e) {
-	if (e.getSource() == jcb) {
-	    jtf.setText(jcb.getSelectedItem().toString());
-	}
+        if (e.getSource() == jcb) {
+            jtf.setText(jcb.getSelectedItem().toString());
+        }
     }
 }

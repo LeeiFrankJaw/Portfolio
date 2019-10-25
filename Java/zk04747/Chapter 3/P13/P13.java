@@ -36,7 +36,7 @@ class Complex {
     
     Complex multiply(Complex c) {
         return new Complex(a*c.getRe() - b*c.getIm(),
-			   b*c.getRe() + a*c.getIm());
+                           b*c.getRe() + a*c.getIm());
     }
     
     Complex multiply(double r) {
@@ -46,7 +46,7 @@ class Complex {
     Complex divide(Complex c) {
         double d = Math.pow(c.getRe(), 2) + Math.pow(c.getIm(), 2);
         return new Complex((a*c.getRe() + b*c.getIm()) / d,
-			   (b*c.getRe() - a*c.getIm()) / d);
+                           (b*c.getRe() - a*c.getIm()) / d);
     }
     
     Complex divide(double r) {

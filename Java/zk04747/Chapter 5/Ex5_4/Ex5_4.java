@@ -6,9 +6,9 @@ public class Ex5_4 extends Applet {
     JButton button;
     public void init() {
         panel1 = new MyPanelEx5_4("Confirm", "Cancel",
-			     "Label, we are in the panel 1.");
+                             "Label, we are in the panel 1.");
         panel2 = new MyPanelEx5_4("Confirm", "Cancel",
-			     "Label, we are in the panel 2.");
+                             "Label, we are in the panel 2.");
         button = new JButton("I am not the button in the panel");
         add(panel1);
         add(panel2);
