@@ -9,13 +9,13 @@ public class P14 {
             a = n / m;
             b = n % 10;
             if (a != b) {
-                System.out.println("Õâ²»ÊÇÒ»¸ö»ØÎÄÕûÊı¡£");
+                System.out.println("è¿™ä¸æ˜¯ä¸€ä¸ªå›æ–‡æ•´æ•°ã€‚");
                 break;
             }
             n %= m;
             n /= 10;
             d -= 2;
         }
-        if (n/10 == 0) System.out.println("ÕâÊÇÒ»¸ö»ØÎÄÕûÊı¡£");
+        if (n/10 == 0) System.out.println("è¿™æ˜¯ä¸€ä¸ªå›æ–‡æ•´æ•°ã€‚");
     }
 }

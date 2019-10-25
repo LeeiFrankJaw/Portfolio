@@ -16,7 +16,7 @@ class ButtonDemo extends JFrame implements ActionListener {
     
     ButtonDemo() {
         setSize(WITDH, HEIGHT);
-        setTitle("按钮事件样例");
+        setTitle("鎸夐挳浜嬩欢鏍蜂緥");
         Container conPane = getContentPane();
         conPane.setBackground(Color.BLUE);
         conPane.setLayout(new FlowLayout());

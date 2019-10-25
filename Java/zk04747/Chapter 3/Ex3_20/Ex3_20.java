@@ -15,7 +15,7 @@ public class Ex3_20 extends Applet {
     public void stop() {}
     
     public void paint(Graphics g) {
-        g.drawString("我们正在学习Java程序设计", 20, pos + 10);
+        g.drawString("鎴戜滑姝ｅ湪瀛︿範Java绋嬪簭璁捐", 20, pos + 10);
         pos = (pos+20)%100 + 5;
     }
 }

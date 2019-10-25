@@ -5,7 +5,7 @@ public class Ex2_14 {
         int n, j, k, space;
         String result =
                 (String)JOptionPane.showInputDialog(null,
-                "ÇëÊäÈëÒ»¸öÕûÊı", "ÊäÈë¶Ô»°¿ò", JOptionPane.PLAIN_MESSAGE,
+                "è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°", "è¾“å…¥å¯¹è¯æ¡†", JOptionPane.PLAIN_MESSAGE,
                 null, null, null);
         n = Integer.parseInt(result);
         space = 40;

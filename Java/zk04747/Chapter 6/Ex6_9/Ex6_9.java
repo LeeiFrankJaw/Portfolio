@@ -95,6 +95,6 @@ class MyListenerEx6_9 extends JComponent implements MouseListener,
 
 public class Ex6_9 {
     public static void main(String[] args) {
-	MyWindowEx6_9 window = new MyWindowEx6_9("¹ö¶¯ÌõÊ¾Òâ³ÌĞò");
+	MyWindowEx6_9 window = new MyWindowEx6_9("æ»šåŠ¨æ¡ç¤ºæ„ç¨‹åº");
     }
 }

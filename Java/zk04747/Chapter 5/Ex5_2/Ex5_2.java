@@ -9,10 +9,10 @@ public class Ex5_2 {
     public static MyWindowDemo mw2;
     
     public static void main(String[] args) {
-        JButton butt1 = new JButton("ÎÒÊÇÒ»¸ö°´Å¥");
-        JButton butt2 = new JButton("ÎÒÊÇÁíÒ»¸ö°´Å¥");
-        String name1 = "ÎÒµÄµÚÒ»¸ö´°¿Ú";
-        String name2 = "ÎÒµÄµÚ¶ş¸ö´°¿Ú";
+        JButton butt1 = new JButton("æˆ‘æ˜¯ä¸€ä¸ªæŒ‰é’®");
+        JButton butt2 = new JButton("æˆ‘æ˜¯å¦ä¸€ä¸ªæŒ‰é’®");
+        String name1 = "æˆ‘çš„ç¬¬ä¸€ä¸ªçª—å£";
+        String name2 = "æˆ‘çš„ç¬¬äºŒä¸ªçª—å£";
         
         mw1 = new MyWindowDemo(name1, butt1, Color.BLUE, 350, 450);
         mw1.setVisible(true);

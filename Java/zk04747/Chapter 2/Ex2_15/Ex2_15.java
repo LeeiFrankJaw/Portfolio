@@ -5,7 +5,7 @@ public class Ex2_15 {
         long m, n, k;
         int j;
         String result = (String) JOptionPane.showInputDialog(null,
-		"ÇëÊäÈëÒ»¸öÕûÊı£¨>2£©", "ÊäÈë¶Ô»°¿ò", JOptionPane.PLAIN_MESSAGE,
+		"è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼ˆ>2ï¼‰", "è¾“å…¥å¯¹è¯æ¡†", JOptionPane.PLAIN_MESSAGE,
 		null, null, null);
         m = Integer.parseInt(result);
         System.out.print("\t2");

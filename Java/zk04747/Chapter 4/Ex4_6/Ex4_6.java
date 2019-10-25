@@ -8,13 +8,13 @@ public class Ex4_6 {
             pas2 = new StringTokenizer(s2, " ?");
         int n1 = pas1.countTokens(), n2 = pas2.countTokens();
         
-        System.out.println("s1ÓĞµ¥´Ê£º" + n1 + "¸ö£¬È«²¿µ¥´ÊÈçÏÂ£º");
+        System.out.println("s1æœ‰å•è¯ï¼š" + n1 + "ä¸ªï¼Œå…¨éƒ¨å•è¯å¦‚ä¸‹ï¼š");
         while (pas1.hasMoreTokens()) {
             s = pas1.nextToken();
             System.out.println(s);
         }
         
-        System.out.println("s2ÓĞµ¥´Ê£º" + n2 + "¸ö£¬È«²¿µ¥´ÊÈçÏÂ£º");
+        System.out.println("s2æœ‰å•è¯ï¼š" + n2 + "ä¸ªï¼Œå…¨éƒ¨å•è¯å¦‚ä¸‹ï¼š");
         while (pas1.hasMoreTokens()) {
             s = pas1.nextToken();
             System.out.println(s);

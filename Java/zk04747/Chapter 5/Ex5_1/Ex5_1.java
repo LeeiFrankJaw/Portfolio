@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class Ex5_1 {
     public static void main(String args[]) {
-        JFrame mw = new JFrame("ÎÒµÄµÚÒ»¸ö´°¿Ú");
-        JButton button = new JButton("ÎÒÊÇÒ»¸ö°´Å¥");
+        JFrame mw = new JFrame("æˆ‘çš„ç¬¬ä¸€ä¸ªçª—å£");
+        JButton button = new JButton("æˆ‘æ˜¯ä¸€ä¸ªæŒ‰é’®");
         
         mw.setSize(250, 200);
         mw.getContentPane().add(button);

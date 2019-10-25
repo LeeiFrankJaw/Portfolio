@@ -8,19 +8,19 @@ public class Ex4_7 {
         s1 = new String(b);
         s2 = new String(b, 3, 6);
         s3 = new String("ABC");
-        s4 = new String("Java³ÌĞò");
+        s4 = new String("Javaç¨‹åº");
         c = s3.getBytes();
         d = s4.getBytes();
         
         System.out.println(s1);
         System.out.println(s2);
         System.out.println(s3);
-        System.out.println("Êı×écµÄ³¤¶ÈÊÇ£º" + c.length);
-        System.out.println("Êı×édµÄ³¤¶ÈÊÇ£¨Ò»¸öºº×ÖÕ¼Á½¸ö×Ö½Ú£©£º" + d.length);
-        System.out.println("ÓÃASCIIÊıÖµÊä³öÊı×éc[]£º");
+        System.out.println("æ•°ç»„cçš„é•¿åº¦æ˜¯ï¼š" + c.length);
+        System.out.println("æ•°ç»„dçš„é•¿åº¦æ˜¯ï¼ˆä¸€ä¸ªæ±‰å­—å ä¸¤ä¸ªå­—èŠ‚ï¼‰ï¼š" + d.length);
+        System.out.println("ç”¨ASCIIæ•°å€¼è¾“å‡ºæ•°ç»„c[]ï¼š");
         for (int i = 0; i < c.length; i++)
             System.out.println("c" + "[" + i + "]:\t" + c[i]);
-        System.out.println("ÓÃASCIIÊıÖµÊä³öÊı×éd[]£º");
+        System.out.println("ç”¨ASCIIæ•°å€¼è¾“å‡ºæ•°ç»„d[]ï¼š");
         for (int i = 0; i < d.length; i++)
             System.out.println("d" + "[" + i + "]:\t" + d[i]);
     }
