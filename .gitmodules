@@ -4,3 +4,6 @@
 [submodule "Java/iText7-jump-start"]
 	path = Java/iText7-jump-start
 	url = git@github.com:LeeiFrankJaw/iText7-jump-start.git
+[submodule "Java/zk04747"]
+	path = Java/zk04747
+	url = git@github.com:LeeiFrankJaw/zk04747.git
