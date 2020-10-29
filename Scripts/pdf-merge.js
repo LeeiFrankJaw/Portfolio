@@ -79,7 +79,7 @@ function copyAllPages(dstDoc, srcDoc) {
     // copyOutlines(dstDoc, srcDoc, srcMap);
 }
 
-function pdfmerge() {
+function pdfMerge() {
     var srcDoc, dstDoc, i;
 
     dstDoc = new PDFDocument();
@@ -97,4 +97,4 @@ function pdfmerge() {
 if (argv.length < 3)
     print("usage: mutool run pdf-merge.js output.pdf input1.pdf input2.pdf ...");
 else
-    pdfmerge();
+    pdfMerge();

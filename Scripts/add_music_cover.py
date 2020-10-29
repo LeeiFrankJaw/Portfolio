@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import os
 import sys
 
 import mutagen
@@ -19,7 +18,7 @@ ext_img_type = {
 
 def add_music_cover(img_path, audio_paths):
 
-    def add_cover( path):
+    def add_cover(path):
         piece = mutagen.File(path)
         if not isinstance(piece, MP4):
             print(m4a_prompt)
@@ -46,6 +45,7 @@ def add_music_cover(img_path, audio_paths):
 
     for path in audio_paths:
         add_cover(path)
+
 
 if __name__ == '__main__':
     if len(sys.argv) > 2:

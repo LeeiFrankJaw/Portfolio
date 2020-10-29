@@ -48,7 +48,7 @@ function copyPage(dstDoc, srcDoc, pageNumber, map) {
 }
 
 
-function pdfextract() {
+function pdfExtract() {
     var srcDoc, dstDoc;
 
     // initialize destination document
@@ -87,4 +87,4 @@ function pdfextract() {
 if (argv.length < 4)
     print("usage: mutool run pdf-extract.js output.pdf input.pdf start_page [end_page]");
 else
-    pdfextract();
+    pdfExtract();

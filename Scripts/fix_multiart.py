@@ -36,11 +36,30 @@ def fix(piece):
         piece.save()
 
 
+def fix_mp4(piece):
+    if not isinstance(piece, mutagen.mp4.MP4):
+        return
+
+    artists = list(map(lambda s: s.split(';'), piece.get('©ART', [])))
+    if any(map(lambda x: len(x) > 1, artists)):
+        new_artists = list(chain(*artists))
+        print('\n\n{}\n\n{}\n'
+              .format('\n'.join(new_artists), piece.filename))
+        action = input(prompt)
+        while not (action == '' or action.lower() in ['y', 'n']):
+            action = input(prompt)
+        if action == '' or action.lower() == 'y':
+            piece['©ART'] = new_artists
+            piece.save()
+
+
 def fix_multiart(music_dir):
     for dirpath, dirnames, filenames in os.walk(music_dir):
         for name in filenames:
             if name.endswith('.mp3'):
                 fix(mutagen.File(os.path.join(dirpath, name)))
+            if name.endswith('.m4a'):
+                fix_mp4(mutagen.File(os.path.join(dirpath, name)))
 
 
 if __name__ == '__main__':
