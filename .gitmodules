@@ -7,3 +7,6 @@
 [submodule "Java/zk04747"]
 	path = Java/zk04747
 	url = git@github.com:LeeiFrankJaw/zk04747.git
+[submodule "Translations"]
+	path = Translations
+	url = git@github.com:LeeiFrankJaw/Translations.git

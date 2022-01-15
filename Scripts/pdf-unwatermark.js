@@ -23,7 +23,10 @@ function pdfUnwatermark() {
         });
         keys.forEach(function (key) {
             srcPage.Resources.XObject.delete(key);
-        })
+        });
+        if (srcPage.Contents.length > 1) {
+            srcPage.Contents.delete(srcPage.Contents.length-1);
+        }
         // if (srcPage.Contents === undefined) {
         //     break;
         // }
@@ -68,6 +71,10 @@ function pdfUnwatermark() {
         argv.push('output.pdf');
     }
     srcDoc.save(argv[2], 'compress,garbage,sanitize');
+}
+
+if (typeof argv === 'undefined') {
+    var argv = [""].concat(scriptArgs);
 }
 
 if (argv.length < 2) {

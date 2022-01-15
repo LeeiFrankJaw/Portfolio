@@ -94,6 +94,10 @@ function pdfMerge() {
     dstDoc.save(argv[1], "compress");
 }
 
+if (typeof argv === 'undefined') {
+    var argv = [""].concat(scriptArgs);
+}
+
 if (argv.length < 3)
     print("usage: mutool run pdf-merge.js output.pdf input1.pdf input2.pdf ...");
 else

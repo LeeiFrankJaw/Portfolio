@@ -58,7 +58,7 @@ function pdfExtract() {
     pageLabels.writeObject(dstDoc.newDictionary());
     pageLabels.Nums = dstDoc.newArray();
     dstTrailer.Root.PageLabels = pageLabels;
-    
+
     // initialize source document
     srcDoc = new PDFDocument(argv[2]);
     var srcTrailer = srcDoc.getTrailer();
@@ -83,6 +83,9 @@ function pdfExtract() {
     dstDoc.save(argv[1], "compress");
 }
 
+if (typeof argv === 'undefined') {
+    var argv = [""].concat(scriptArgs);
+}
 
 if (argv.length < 4)
     print("usage: mutool run pdf-extract.js output.pdf input.pdf start_page [end_page]");
