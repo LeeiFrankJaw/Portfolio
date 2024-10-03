@@ -6,6 +6,22 @@ var mojibake = {
     '/#CB#CE#CC#E5': '宋体'
 }
 
+function fixFont(val, key) {
+    // if (val.BaseFont.toString().slice(0,2) === '/#')
+    if (val.BaseFont.toString() in mojibake)
+        val.BaseFont = mojibake[val.BaseFont.toString()];
+    if (val.Subtype.asName() === "Type0"
+        && val.DescendantFonts[0].Subtype.asName() === "CIDFontType2") {
+        var fd = val.DescendantFonts[0].FontDescriptor;
+        if (typeof fd.FontFile2 === "undefined"
+            && typeof fd.FontFamily !== "undefined"
+            && fd.FontFamily.toString()[0] === "<")
+            fd.FontFamily = "("
+            .concat(fd.FontName.asName())
+            .concat(")");
+    }
+}
+
 function pdfFixfonts() {
     var srcDoc;
 
@@ -15,15 +31,10 @@ function pdfFixfonts() {
     var startPage = 0,
         endPage = srcDoc.countPages();
 
-    var srcPage, keys;
+    var srcPage;
     for (var i = startPage; i < endPage; i++) {
         srcPage = srcDoc.findPage(i);
-        keys = [];
-        srcPage.Resources.Font.forEach(function (val, key) {
-            // if (val.BaseFont.toString().slice(0,2) === '/#')
-            if (val.BaseFont.toString() in mojibake)
-                val.BaseFont = mojibake[val.BaseFont.toString()];
-        });
+        srcPage.Resources.Font.forEach(fixFont);
     }
 
     if (scriptArgs[1] === undefined) {
