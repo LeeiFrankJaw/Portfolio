@@ -6,11 +6,14 @@ var mojibake = {
     '/#B7#BD#D5#FD#BF#AC#CC#E5_GBK': '方正楷体_GBK',
     '/#B7#BD#D5#FD#CA#E9#CB#CE_GBK': '方正书宋_GBK',
     '/#BA#DA#CC#E5': '黑体',
-    '/#CB#CE#CC#E5': '宋体'
+    '/#CB#CE#CC#E5': '宋体',
+    '/#B2#D3#A9#FA#C5#E9': '細明體',
+    '/#A5#FE#AFu#B7#A2#AE#D1': '全真楷書',
+    '/#A5#FE#AFu#A4#A4#B6#C2#C5#E9': '全真中黑體',
 }
 
 var ascii = {
-    '方正黑体简体': 'FZHei-B01S'
+    '方正黑体简体': 'FZHei-B01S',
 }
 
 var psname = {
@@ -19,8 +22,17 @@ var psname = {
     '方正楷体_GBK': 'FZKTK--GBK1-0',
     '方正黑体_GBK': 'FZHTK--GBK1-0',
     '宋体': 'SimSun',
-    '黑体': 'SimHei'
+    '黑体': 'SimHei',
+    '細明體': 'MingLiU',
+    'DFKai-SB': 'DFKaiShu-SB-Estd-BF',
+    // 'PingFang TC:Medium': 'PingFangTC-Medium',
+    'TimesNewRoman': 'TimesNewRomanPSMT',
 }
+
+// var substitution = {
+//     '全真楷書': 'DFKai-SB',
+//     '全真中黑體': 'PingFang TC:Medium',
+// }
 
 function fixEncoding(val, key, obj, fname) {
     if (val[key][fname]() in obj) {
@@ -31,6 +43,7 @@ function fixEncoding(val, key, obj, fname) {
 }
 
 function fixFamily(fd) {
+    // fd.FontFamily = srcDoc.newString(fd.FontName.asName());
     if (typeof fd.FontFile2 === 'undefined'
         && typeof fd.FontFamily !== 'undefined'
         && fd.FontFamily.toString()[0] === '<'
@@ -48,9 +61,16 @@ function fixFont(val, key) {
         fixEncoding(val, 'BaseFont', mojibake, 'toString');
         fixEncoding(val.DescendantFonts[0], 'BaseFont', mojibake, 'toString');
         fixEncoding(fd, 'FontName', mojibake, 'toString');
+        // fixEncoding(val.DescendantFonts[0], 'BaseFont', substitution, 'asName');
+        // fixEncoding(fd, 'FontName', substitution, 'asName');
         fixEncoding(val.DescendantFonts[0], 'BaseFont', psname, 'asName');
         fixEncoding(fd, 'FontName', psname, 'asName');
         fixFamily(fd);
+    }
+    if (val.Subtype.asName() === 'TrueType') {
+        var fd = val.FontDescriptor;
+        fixEncoding(val, 'BaseFont', psname, 'asName');
+        fixEncoding(fd, 'FontName', psname, 'asName');
     }
 }
 
