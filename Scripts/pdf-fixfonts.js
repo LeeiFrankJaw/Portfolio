@@ -5,6 +5,10 @@ var mojibake = {
     '/#B7#BD#D5#FD#BA#DA#CC#E5_GBK': '方正黑体_GBK',
     '/#B7#BD#D5#FD#BF#AC#CC#E5_GBK': '方正楷体_GBK',
     '/#B7#BD#D5#FD#CA#E9#CB#CE_GBK': '方正书宋_GBK',
+    '/#B7#BD#D5#FD#CA#E9#CB#CE#BC#F2#CC#E5': '方正书宋简体',
+    '/#B7#BD#D5#FD#BA#DA#CC#E5#BC#F2#CC#E5': '方正黑体简体',
+    '/#B7#BD#D5#FD#BF#AC#CC#E5#BC#F2#CC#E5': '方正楷体简体',
+    '/#B7#BD#D5#FD#B7#C2#CB#CE#BC#F2#CC#E5': '方正仿宋简体',
     '/#BA#DA#CC#E5': '黑体',
     '/#CB#CE#CC#E5': '宋体',
     '/#B2#D3#A9#FA#C5#E9': '細明體',
@@ -27,6 +31,10 @@ var psname = {
     'DFKai-SB': 'DFKaiShu-SB-Estd-BF',
     // 'PingFang TC:Medium': 'PingFangTC-Medium',
     'TimesNewRoman': 'TimesNewRomanPSMT',
+}
+
+var subtype = {
+    'TimesNewRoman': 'TrueType'
 }
 
 // var substitution = {
@@ -67,11 +75,35 @@ function fixFont(val, key) {
         fixEncoding(fd, 'FontName', psname, 'asName');
         fixFamily(fd);
     }
+    if (val.BaseFont.asName() in subtype)
+        val.Subtype = subtype[val.BaseFont.asName()];
     if (val.Subtype.asName() === 'TrueType') {
-        var fd = val.FontDescriptor;
         fixEncoding(val, 'BaseFont', psname, 'asName');
-        fixEncoding(fd, 'FontName', psname, 'asName');
+        if (typeof val.DescendantFonts !== 'undefined') {
+            val.FontDescriptor = val.DescendantFonts[0].FontDescriptor;
+            delete val.DescendantFonts;
+        }
+        if (typeof val.FontDescriptor !== 'undefined')
+            fixEncoding(val.FontDescriptor, 'FontName', psname, 'asName');
     }
+}
+
+function findFont(obj, func) {
+    function findFontExec(obj) {
+        // print(obj.toString() + '\n\t' + obj.Type + '\t' + obj.Subtype);
+        if (typeof obj.Resources !== 'undefined'
+            && typeof obj.Resources.Font !== 'undefined')
+            obj.Resources.Font.forEach(func);
+        else if (obj.Type.asName() !== 'Page'
+                 && (obj.Type.asName() !== 'XObject'
+                     || obj.Subtype.asName() !== 'Form'))
+            ;
+        else if (typeof obj.Resources.XObject !== 'undefined')
+            obj.Resources.XObject.forEach(findFontExec);
+        else
+            ;
+    }
+    findFontExec(obj);
 }
 
 function pdfFixfonts() {
@@ -84,7 +116,7 @@ function pdfFixfonts() {
     var srcPage;
     for (var i = startPage; i < endPage; i++) {
         srcPage = srcDoc.findPage(i);
-        srcPage.Resources.Font.forEach(fixFont);
+        findFont(srcPage, fixFont);
     }
 
     if (scriptArgs[1] === undefined) {
