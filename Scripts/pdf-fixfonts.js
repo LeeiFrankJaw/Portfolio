@@ -33,9 +33,13 @@ var psname = {
     'TimesNewRoman': 'TimesNewRomanPSMT',
 }
 
-var subtype = {
-    'TimesNewRoman': 'TrueType'
-}
+var truetype = [
+    'TimesNewRoman',
+    'TimesNewRomanPSMT',
+    'TimesNewRomanPS-BoldMT',
+    'TimesNewRomanPS-ItalicMT',
+    'TimesNewRomanPS-BoldItalicMT',
+]
 
 // var substitution = {
 //     '全真楷書': 'DFKai-SB',
@@ -75,8 +79,12 @@ function fixFont(val, key) {
         fixEncoding(fd, 'FontName', psname, 'asName');
         fixFamily(fd);
     }
-    if (val.BaseFont.asName() in subtype)
-        val.Subtype = subtype[val.BaseFont.asName()];
+    truetype.forEach(function (bf) {
+        if (val.BaseFont.asName() === bf) {
+            print(val.Subtype + '\t-->\tTrueType for ' + bf);
+            val.Subtype = 'TrueType';
+        }
+    });
     if (val.Subtype.asName() === 'TrueType') {
         fixEncoding(val, 'BaseFont', psname, 'asName');
         if (typeof val.DescendantFonts !== 'undefined') {
