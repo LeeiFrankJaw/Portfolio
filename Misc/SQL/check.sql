@@ -15,12 +15,23 @@ ATTACH DATABASE '<Calibre Library>/metadata.db' AS working;
 .print Check if there are any new items
 .print --------------------------------
 
-SELECT sort AS title_sort, author_sort
+SELECT sort AS title_sort, author_sort, id
   FROM working.books
  WHERE author_sort NOT IN
        (SELECT author_sort FROM books)
     OR sort NOT IN
-       (SELECT sort FROM books);
+       (SELECT sort FROM books)
+ ORDER BY id DESC;
+
+.print
+.print --------------------------
+.print Check author link mismatch
+.print --------------------------
+
+SELECT name AS author, MA.link, WA.link
+  FROM authors AS MA
+ INNER JOIN working.authors WA USING(name)
+ WHERE MA.link <> WA.link;
 
 -- .print
 -- .print ------------------------------
@@ -221,6 +232,16 @@ SELECT MB.sort, MB.author_sort, MB.id, NULL AS tag, WB.id, WT.name AS tag
             AND MBT.book = MB.id);
 
 .print
+.print -----------------------
+.print Check tag link mismatch
+.print -----------------------
+
+SELECT name AS tag, MT.link, WT.link
+  FROM tags AS MT
+ INNER JOIN working.tags AS WT USING(name)
+ WHERE MT.link <> WT.link;
+
+.print
 .print ----------------------
 .print Check pubdate mismatch
 .print ----------------------
@@ -257,11 +278,11 @@ SELECT MB.sort, MB.author_sort, MB.id, MP.name as publisher, WB.id, WP.name as p
         OR MP.name <> WP.name);
 
 .print
-.print ------------------------
+.print -----------------------------
 .print Check publisher link mismatch
-.print ------------------------
+.print -----------------------------
 
-SELECT name, MP.id, MP.link, WP.id, WP.link
+SELECT name, MP.link, WP.link
   FROM publishers AS MP
  INNER JOIN working.publishers AS WP USING(name)
  WHERE MP.link <> WP.link;
@@ -290,36 +311,92 @@ SELECT MB.sort, MB.author_sort, MB.id, MS.name, WB.id, WS.name
         OR MS.name <> WS.name);
 
 .print
-.print -------------------------
-.print Check identifier mismatch
-.print -------------------------
+.print --------------------------
+.print Check series link mismatch
+.print --------------------------
 
-SELECT MB.sort, MB.author_sort, MB.id, MI.type, MI.val, WB.id, WI.type, WI.val
-  FROM books AS MB
-  LEFT OUTER JOIN identifiers AS MI
-    ON MI.book = MB.id
- INNER JOIN working.books AS WB
-    ON MB.sort = WB.sort
-   AND MB.author_sort = WB.author_sort
-  LEFT OUTER JOIN working.identifiers AS WI
-    ON WI.book = WB.id
- WHERE
-   NOT (MI.id IS NULL AND WI.id IS NULL)
-   AND (MI.type NOT IN
-        (SELECT type
-           FROM working.identifiers AS WI2
-          WHERE WI2.book = WB.id)
-        OR WI.type NOT IN
-        (SELECT type
-           FROM identifiers AS MI2
-          WHERE MI2.book = MB.id)
-        OR MI.type = WI.type AND MI.val <> WI.val)
- ORDER BY WB.id DESC;
+SELECT name AS series, MS.link, WS.link
+  FROM series AS MS
+ INNER JOIN working.series AS WS USING(name)
+ WHERE MS.link <> WS.link;
+
+-- .print
+-- .print -------------------------
+-- .print Check identifier mismatch
+-- .print -------------------------
+
+-- SELECT MB.sort, MB.author_sort, MB.id, MI.type, MI.val, WB.id, WI.type, WI.val
+--   FROM books AS MB
+--   LEFT OUTER JOIN identifiers AS MI
+--     ON MI.book = MB.id
+--  INNER JOIN working.books AS WB
+--     ON MB.sort = WB.sort
+--    AND MB.author_sort = WB.author_sort
+--   LEFT OUTER JOIN working.identifiers AS WI
+--     ON WI.book = WB.id
+--  WHERE
+--    NOT (MI.id IS NULL AND WI.id IS NULL)
+--    AND (MI.type NOT IN
+--         (SELECT type
+--            FROM working.identifiers AS WI2
+--           WHERE WI2.book = WB.id)
+--         OR WI.type NOT IN
+--         (SELECT type
+--            FROM identifiers AS MI2
+--           WHERE MI2.book = MB.id)
+--         OR MI.type = WI.type AND MI.val <> WI.val)
+--  ORDER BY WB.id DESC;
 
 .print
-.print -------------------------
+.print -------------------------------------
+.print Check identifier mismatch (version 2)
+.print -------------------------------------
+
+WITH B AS (SELECT MB.sort AS title_sort, MB.author_sort,
+                  MB.id AS id1, WB.id AS id2
+             FROM books AS MB,
+                  working.books AS WB
+            WHERE MB.sort = WB.sort
+              AND MB.author_sort = WB.author_sort)
+SELECT title_sort, author_sort,
+       id1 AS id, type, val,
+       id2 AS id, NULL AS type, NULL AS val
+  FROM B
+ INNER JOIN identifiers AS MI
+    ON MI.book = id1
+ WHERE NOT EXISTS
+       (SELECT *
+          FROM working.identifiers
+         WHERE book = id2
+           AND type = MI.type)
+ UNION
+SELECT title_sort, author_sort,
+       id1 AS id, NULL AS type, NULL AS val,
+       id2 AS id, type, val
+  FROM B
+ INNER JOIN working.identifiers AS WI
+    ON WI.book = id2
+ WHERE NOT EXISTS
+       (SELECT *
+          FROM identifiers
+         WHERE book = id1
+           AND type = WI.type)
+ UNION
+SELECT title_sort, author_sort,
+       id1 AS id, MI.type, MI.val,
+       id2 AS id, WI.type, WI.val
+  FROM B
+ INNER JOIN identifiers AS MI
+    ON MI.book = id1
+ INNER JOIN working.identifiers AS WI
+    ON WI.book = id2
+   AND WI.type = MI.type
+ WHERE MI.val <> WI.val;
+
+.print
+.print ----------------------
 .print Check comment mismatch
-.print -------------------------
+.print ----------------------
 
 SELECT MB.sort, MB.author_sort, MB.id, MC.text, WB.id, WC.text
   FROM books AS MB
@@ -336,44 +413,87 @@ SELECT MB.sort, MB.author_sort, MB.id, MC.text, WB.id, WC.text
         OR MC.text <> WC.text)
  ORDER BY WB.id DESC;
 
-.print
-.print -----------------------
-.print Check language mismatch
-.print -----------------------
+-- .print
+-- .print -----------------------
+-- .print Check language mismatch
+-- .print -----------------------
 
-SELECT MB.sort, MB.author_sort, MB.id, ML.lang_code AS lang, WB.id, NULL AS lang
-  FROM books AS MB
-  LEFT OUTER JOIN books_languages_link AS MBL
-    ON MBL.book = MB.id
-  LEFT OUTER JOIN languages AS ML
+-- SELECT MB.sort, MB.author_sort, MB.id, ML.lang_code AS lang, WB.id, NULL AS lang
+--   FROM books AS MB
+--   LEFT OUTER JOIN books_languages_link AS MBL
+--     ON MBL.book = MB.id
+--   LEFT OUTER JOIN languages AS ML
+--     ON MBL.lang_code = ML.id
+--  INNER JOIN working.books AS WB
+--     ON MB.sort = WB.sort
+--    AND MB.author_sort = WB.author_sort
+--  WHERE ML.lang_code IS NOT NULL
+--    AND ML.lang_code NOT IN
+--        (SELECT WL.lang_code
+--           FROM working.books_languages_link AS WBL,
+--                working.languages AS WL
+--          WHERE WBL.book = WB.id
+--            AND WBL.lang_code = WL.id)
+--  UNION
+-- SELECT MB.sort, MB.author_sort, MB.id, NULL AS lang, WB.id, WL.lang_code AS lang
+--   FROM working.books AS WB
+--   LEFT OUTER JOIN working.books_languages_link AS WBL
+--     ON WBL.book = WB.id
+--   LEFT OUTER JOIN working.languages AS WL
+--     ON WBL.lang_code = WL.id
+--  INNER JOIN books AS MB
+--     ON MB.sort = WB.sort
+--    AND MB.author_sort = WB.author_sort
+--  WHERE WL.lang_code IS NOT NULL
+--    AND WL.lang_code NOT IN
+--        (SELECT ML.lang_code
+--           FROM books_languages_link AS MBL,
+--                languages AS ML
+--          WHERE MBL.book = MB.id
+--            AND MBL.lang_code = ML.id);
+
+.print
+.print -----------------------------------
+.print Check language mismatch (version 2)
+.print -----------------------------------
+
+WITH B AS (SELECT MB.sort AS title_sort, MB.author_sort,
+                  MB.id AS id1, WB.id AS id2
+             FROM books AS MB,
+                  working.books AS WB
+            WHERE MB.sort = WB.sort
+              AND MB.author_sort = WB.author_sort)
+SELECT title_sort, author_sort,
+       id1 AS id, ML.lang_code AS lang,
+       id2 AS id, NULL AS lang
+  FROM B
+ INNER JOIN books_languages_link AS MBL
+    ON MBL.book = id1
+ INNER JOIN languages AS ML
     ON MBL.lang_code = ML.id
- INNER JOIN working.books AS WB
-    ON MB.sort = WB.sort
-   AND MB.author_sort = WB.author_sort
- WHERE ML.lang_code IS NOT NULL
-   AND ML.lang_code NOT IN
-       (SELECT WL.lang_code
+ WHERE NOT EXISTS
+       (SELECT *
           FROM working.books_languages_link AS WBL,
                working.languages AS WL
-         WHERE WBL.book = WB.id
-           AND WBL.lang_code = WL.id)
+         WHERE WBL.book = id2
+           AND WBL.lang_code = WL.id
+           AND WL.lang_code = ML.lang_code)
  UNION
-SELECT MB.sort, MB.author_sort, MB.id, NULL AS lang, WB.id, WL.lang_code AS lang
-  FROM working.books AS WB
-  LEFT OUTER JOIN working.books_languages_link AS WBL
-    ON WBL.book = WB.id
-  LEFT OUTER JOIN working.languages AS WL
+SELECT title_sort, author_sort,
+       id1 AS id, NULL AS lang,
+       id2 AS id, WL.lang_code AS lang
+  FROM B
+ INNER JOIN working.books_languages_link AS WBL
+    ON WBL.book = id2
+ INNER JOIN working.languages AS WL
     ON WBL.lang_code = WL.id
- INNER JOIN books AS MB
-    ON MB.sort = WB.sort
-   AND MB.author_sort = WB.author_sort
- WHERE WL.lang_code IS NOT NULL
-   AND WL.lang_code NOT IN
-       (SELECT ML.lang_code
+ WHERE NOT EXISTS
+       (SELECT *
           FROM books_languages_link AS MBL,
                languages AS ML
-         WHERE MBL.book = MB.id
-           AND MBL.lang_code = ML.id);
+         WHERE MBL.book = id1
+           AND MBL.lang_code = ML.id
+           AND WL.lang_code = ML.lang_code);
 
 -- Local Variables:
 -- sql-product: sqlite
