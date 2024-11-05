@@ -19,7 +19,10 @@ def fixzip(in_filename, out_filename):
         for in_info in in_file.infolist():
             in_info.CRC = None
             out_info = copy(in_info)
-            out_info.filename = in_info.filename.encode('cp437').decode('gbk')
+            try:
+                out_info.filename = in_info.filename.encode('cp437').decode('gbk')
+            except UnicodeEncodeError:
+                pass
             out_info.flag_bits |= LANG_FLAG
             out_info.create_system = OS_FLAG
             out_info.external_attr = FILEMODE << 16

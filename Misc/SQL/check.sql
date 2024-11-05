@@ -2,13 +2,6 @@ ATTACH DATABASE '<Calibre Library>/metadata.db' AS working;
 
 .mode line
 -- .timer on
--- SELECT MB.sort,
---        MB.author_sort
---   FROM books AS MB,
---        working.books AS WB
---  WHERE MB.sort = WB.sort
---    AND MB.author_sort = WB.author_sort
---  LIMIT 1;
 
 .print
 .print --------------------------------
@@ -494,6 +487,34 @@ SELECT title_sort, author_sort,
          WHERE MBL.book = id1
            AND MBL.lang_code = ML.id
            AND WL.lang_code = ML.lang_code);
+
+.print
+.print ----------------------------------
+.print Check if there are any new formats
+.print ----------------------------------
+
+WITH B AS (SELECT MB.sort AS title_sort, MB.author_sort,
+                  MB.id AS id1, WB.id AS id2,
+                  WB.path
+             FROM books AS MB,
+                  working.books AS WB
+            WHERE MB.sort = WB.sort
+              AND MB.author_sort = WB.author_sort)
+SELECT title_sort, author_sort,
+       id1 AS id, NULL AS format,
+       'calibre://show-book/PaperArch/' || id1 as jump,
+       id2 AS id, WD.format AS format,
+       'file://' || @home || '/Paper/'
+       || replace(path, ' ', '%20') as path
+  FROM B
+ INNER JOIN working.data AS WD
+    ON WD.book = id2
+ WHERE NOT EXISTS
+       (SELECT *
+          FROM data
+         WHERE book = id1
+           AND format = WD.format)
+ ORDER BY id1 DESC;
 
 -- Local Variables:
 -- sql-product: sqlite
