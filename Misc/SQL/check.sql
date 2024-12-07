@@ -1,4 +1,6 @@
 ATTACH DATABASE '<Calibre Library>/metadata.db' AS working;
+ATTACH DATABASE '.calnotes/notes.db' AS notes;
+ATTACH DATABASE '<Calibre Library>/.calnotes/notes.db' AS working_notes;
 
 .mode line
 -- .timer on
@@ -23,8 +25,26 @@ SELECT sort AS title_sort, author_sort, id
 
 SELECT name AS author, MA.link, WA.link
   FROM authors AS MA
- INNER JOIN working.authors WA USING(name)
+ INNER JOIN working.authors AS WA USING(name)
  WHERE MA.link <> WA.link;
+
+.print
+.print --------------------------
+.print Check author note mismatch
+.print --------------------------
+
+WITH MN AS (SELECT * FROM notes.notes WHERE colname = 'authors'),
+     WN AS (SELECT * FROM working_notes.notes WHERE colname = 'authors')
+SELECT MA.name AS author, MN.doc, WN.doc
+  FROM authors AS MA
+ INNER JOIN working.authors AS WA USING(name)
+  LEFT OUTER JOIN MN
+    ON MA.id = MN.item
+  LEFT OUTER JOIN WN
+    ON WA.id = WN.item
+ WHERE
+   NOT (MN.doc IS NULL AND WN.doc IS NULL)
+   AND (MN.doc IS NULL OR WN.doc IS NULL OR MN.doc <> WN.doc);
 
 -- .print
 -- .print ------------------------------
@@ -216,7 +236,7 @@ SELECT MB.sort, MB.author_sort, MB.id, NULL AS tag, WB.id, WT.name AS tag
     ON WBT.book = WB.id
   LEFT OUTER JOIN working.tags AS WT
     ON WBT.tag = WT.id
- WHERE WBT.tag IS NOT NULL
+ WHERE WT.name IS NOT NULL
    AND WT.name NOT IN
         (SELECT name
            FROM tags AS MT,
@@ -232,7 +252,11 @@ SELECT MB.sort, MB.author_sort, MB.id, NULL AS tag, WB.id, WT.name AS tag
 SELECT name AS tag, MT.link, WT.link
   FROM tags AS MT
  INNER JOIN working.tags AS WT USING(name)
- WHERE MT.link <> WT.link;
+ WHERE EXISTS
+       (SELECT *
+          FROM pragma_table_info('tags')
+         WHERE name = 'link')
+   AND MT.link <> WT.link;
 
 .print
 .print ----------------------
@@ -504,8 +528,7 @@ SELECT title_sort, author_sort,
        id1 AS id, NULL AS format,
        'calibre://show-book/PaperArch/' || id1 as jump,
        id2 AS id, WD.format AS format,
-       'file://' || @home || '/Paper/'
-       || replace(path, ' ', '%20') as path
+       replace('file://' || @home || '/Paper/' || path, ' ', '%20') AS path
   FROM B
  INNER JOIN working.data AS WD
     ON WD.book = id2

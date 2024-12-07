@@ -1,5 +1,5 @@
 #!/bin/sh
 
-gs -sDEVICE=pdfwrite -o tmp.pdf "$1"
+gs -sDEVICE=pdfwrite -o tmp.pdf -c '<< /NeverEmbed [ ] >> setdistillerparams' -f "$1"
 mv -v "$1" "${1%.[Pp][Dd][Ff]}.orig.pdf"
 mv -v tmp.pdf "$1"
