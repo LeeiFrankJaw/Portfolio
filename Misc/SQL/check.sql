@@ -305,6 +305,24 @@ SELECT name, MP.link, WP.link
  WHERE MP.link <> WP.link;
 
 .print
+.print -----------------------------
+.print Check publisher note mismatch
+.print -----------------------------
+
+WITH MN AS (SELECT * FROM notes.notes WHERE colname = 'publisher'),
+     WN AS (SELECT * FROM working_notes.notes WHERE colname = 'publisher')
+SELECT MP.name AS publisher, MN.doc, WN.doc
+  FROM publishers AS MP
+ INNER JOIN working.publishers AS WP USING(name)
+  LEFT OUTER JOIN MN
+    ON MP.id = MN.item
+  LEFT OUTER JOIN WN
+    ON WP.id = WN.item
+ WHERE
+   NOT (MN.doc IS NULL AND WN.doc IS NULL)
+   AND (MN.doc IS NULL OR WN.doc IS NULL OR MN.doc <> WN.doc);
+
+.print
 .print ---------------------
 .print Check series mismatch
 .print ---------------------
@@ -336,6 +354,24 @@ SELECT name AS series, MS.link, WS.link
   FROM series AS MS
  INNER JOIN working.series AS WS USING(name)
  WHERE MS.link <> WS.link;
+
+.print
+.print --------------------------
+.print Check series note mismatch
+.print --------------------------
+
+WITH MN AS (SELECT * FROM notes.notes WHERE colname = 'series'),
+     WN AS (SELECT * FROM working_notes.notes WHERE colname = 'series')
+SELECT MS.name AS series, MN.doc, WN.doc
+  FROM series AS MS
+ INNER JOIN working.series AS WS USING(name)
+  LEFT OUTER JOIN MN
+    ON MS.id = MN.item
+  LEFT OUTER JOIN WN
+    ON WS.id = WN.item
+ WHERE
+   NOT (MN.doc IS NULL AND WN.doc IS NULL)
+   AND (MN.doc IS NULL OR WN.doc IS NULL OR MN.doc <> WN.doc);
 
 -- .print
 -- .print -------------------------
