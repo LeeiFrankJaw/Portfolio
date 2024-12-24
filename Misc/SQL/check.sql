@@ -327,7 +327,9 @@ SELECT MP.name AS publisher, MN.doc, WN.doc
 .print Check series mismatch
 .print ---------------------
 
-SELECT MB.sort, MB.author_sort, MB.id, MS.name, WB.id, WS.name
+SELECT MB.sort, MB.author_sort,
+       MB.id, MS.name, MB.series_index,
+       WB.id, WS.name, WB.series_index
   FROM books AS MB
  INNER JOIN working.books AS WB
     ON MB.sort = WB.sort
@@ -343,7 +345,8 @@ SELECT MB.sort, MB.author_sort, MB.id, MS.name, WB.id, WS.name
  WHERE
    NOT (MS.name IS NULL AND WS.name IS NULL)
    AND (MS.name IS NULL OR WS.name IS NULL
-        OR MS.name <> WS.name);
+        OR MS.name <> WS.name
+        OR MB.series_index <> WB.series_index);
 
 .print
 .print --------------------------

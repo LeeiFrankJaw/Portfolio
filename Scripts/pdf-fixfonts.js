@@ -17,6 +17,8 @@ var mojibake = {
     '/#B2#D3#A9#FA#C5#E9': '細明體',
     '/#A5#FE#AFu#B7#A2#AE#D1': '全真楷書',
     '/#A5#FE#AFu#A4#A4#B6#C2#C5#E9': '全真中黑體',
+    '/STSong-Light': 'STSong',
+    '/STSong-Light,Bold': 'STZhongsong',
 }
 
 var ascii = {
@@ -25,9 +27,12 @@ var ascii = {
 
 var psname = {
     '方正书宋_GBK': 'FZSSK--GBK1-0',
+    '方正书宋简体': 'FZSSJW--GB1-0',
     '方正仿宋_GBK': 'FZFSK--GBK1-0',
     '方正楷体_GBK': 'FZKTK--GBK1-0',
+    '方正楷体简体': 'FZKTJW--GB1-0',
     '方正黑体_GBK': 'FZHTK--GBK1-0',
+    '方正黑体简体': 'FZHTJW--GB1-0',
     '方正大黑_GBK': 'FZDHTK--GBK1-0',
     '方正隶书_GBK': 'FZLSK--GBK1-0',
     '方正粗倩繁体': 'FZCQFW--GB1-0',
@@ -37,6 +42,7 @@ var psname = {
     'DFKai-SB': 'DFKaiShu-SB-Estd-BF',
     // 'PingFang TC:Medium': 'PingFangTC-Medium',
     'TimesNewRoman': 'TimesNewRomanPSMT',
+    'STSong-Light': 'STSong',
 }
 
 var truetype = [
