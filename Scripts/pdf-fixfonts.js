@@ -42,7 +42,11 @@ var psname = {
     'DFKai-SB': 'DFKaiShu-SB-Estd-BF',
     // 'PingFang TC:Medium': 'PingFangTC-Medium',
     'TimesNewRoman': 'TimesNewRomanPSMT',
+    'TimesNewRoman,Italic': 'TimesNewRomanPS-ItalicMT',
+    'TimesNewRoman,Bold': 'TimesNewRomanPS-BoldMT',
+    'TimesNewRoman,BoldItalic': 'TimesNewRomanPS-BoldItalicMT',
     'STSong-Light': 'STSong',
+    'ArialBlack': 'Arial-Black',
 }
 
 var truetype = [
