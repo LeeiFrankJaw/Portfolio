@@ -34,6 +34,9 @@ var mojibake = {
 
 var ascii = {
     '方正黑体简体': 'FZHei-B01S',
+    '方正大标宋简体': 'FZDaBiaoSong-B06S',
+    '方正细黑一简体': 'FZXiHeiI-Z08S',
+    '华文中宋': 'STZhongsong'
 }
 
 var psname = {
