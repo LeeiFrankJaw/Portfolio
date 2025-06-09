@@ -578,6 +578,18 @@ SELECT title_sort, author_sort,
            AND format = WD.format)
  ORDER BY id1 DESC;
 
+.print
+.print ---------------------------------
+.print Check if there are any duplicates
+.print ---------------------------------
+
+SELECT A.sort, A.author_sort, A.id, B.id
+  FROM books AS A
+ INNER JOIN books AS B
+    ON A.sort = B.sort
+   AND A.author_sort = B.author_sort
+ WHERE A.id <> B.id;
+
 -- Local Variables:
 -- sql-product: sqlite
 -- End:

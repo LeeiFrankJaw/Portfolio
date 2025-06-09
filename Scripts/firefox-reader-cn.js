@@ -5,6 +5,7 @@ c.innerHTML = c.innerHTML.replaceAll('《', '<span class="adobe-guillemet">《</
 c.innerHTML = c.innerHTML.replaceAll('》', '<span class="adobe-guillemet">》</span>');
 c.innerHTML = c.innerHTML.replaceAll('·', '<span class="interpunct">・</span>');
 // c.innerHTML = c.innerHTML.replaceAll('　', '');
+// c.innerHTML = c.innerHTML.replaceAll('&nbsp;', '');
 
 // var ss = document.querySelectorAll('section:has(img:only-child)');
 // ss.forEach((s) => {s.outerHTML = s.outerHTML.replaceAll('<section>', '<p>').replaceAll('</section>', '</p>')});
